@@ -9,41 +9,23 @@ angular.module('app.routes', [])
   $stateProvider
     
   
-
-      .state('tabsController.entrainement', {
-    url: '/training',
-    views: {
-      'tab1': {
-        templateUrl: 'templates/entrainement.html',
+    
+	.state('entrainement', {
+	  url: '/training',
+          templateUrl: 'templates/entrainement.html',
         controller: 'entrainementCtrl'
-      }
-    }
   })
 
-  .state('tabsController.historique', {
+  .state('historique', {
     url: '/history',
-    views: {
-      'tab2': {
-        templateUrl: 'templates/historique.html',
-        controller: 'historiqueCtrl'
-      }
-    }
+      templateUrl: 'templates/historique.html',
+      controller: 'historiqueCtrl'
   })
 
-  .state('tabsController.paramTres', {
+  .state('paramTres', {
     url: '/settings',
-    views: {
-      'tab3': {
-        templateUrl: 'templates/paramTres.html',
-        controller: 'paramTresCtrl'
-      }
-    }
-  })
-
-  .state('tabsController', {
-    url: '/page1',
-    templateUrl: 'templates/tabsController.html',
-    abstract:true
+      templateUrl: 'templates/paramTres.html',
+      controller: 'paramTresCtrl'
   })
 
   .state('informationsEtStatistiques', {

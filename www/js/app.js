@@ -21,3 +21,11 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     }
   });
 })
+
+    .config(function($stateProvider, $urlRouterProvider){
+	$stateProvider.state('home', {
+	    url:'/home',
+	    templateUrl:'templates/home.html'
+	})
+	$urlRouterProvider.otherwise('/home')
+    });
