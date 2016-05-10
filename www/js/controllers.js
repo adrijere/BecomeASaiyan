@@ -23,4 +23,7 @@ angular.module('app.controllers', [])
 .controller('aProposDeNousCtrl', function($scope) {
 
 })
- 
+   
+.controller('brasCtrl', function($scope) {
+
+})
