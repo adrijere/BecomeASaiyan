@@ -48,6 +48,12 @@ angular.module('app.routes', [])
 	    templateUrl: 'templates/bras.html',
 	    controller: 'brasCtrl'
 	})
+
+	.state('modifyValue', {
+	    url: '/modify/:exercice',
+	    templateUrl: 'templates/modify.html',
+	    controller: 'modifyCtrl'
+	})
     
     $urlRouterProvider.otherwise('/page1/settings')
 });
