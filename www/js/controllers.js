@@ -25,16 +25,54 @@ angular.module('app.controllers', [])
     })
    
     .controller('brasCtrl', function($scope) {
-	$scope.repetition = 0;
-	$scope.poids = 0;
-	$scope.modification = false;
-	$scope.modifyValue = function() {
-	    $scope.modification = !$scope.modification;
+	$scope.exercices = [{
+	    "id" : 0,
+	    "exercice" : "Curl barre",
+	    "repetition" : 0,
+	    "poids" : 0,
+	    "modification" : false
+	},
+			    {
+				"id" : 1,
+				"exercice" : "Curl incliné",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    },
+			    {
+				"id" : 2,
+				"exercice" : "Curl marteau",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    },
+			    {
+				"id" : 3,
+				"exercice" : "Curl concentré",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    },
+			    {
+				"id" : 4,
+				"exercice" : "Drag curl",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    },
+			    {
+				"id" : 5,
+				"exercice" : "Pupitre",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    }
+			  ];
+	$scope.modifyValue = function(id) {
+	    $scope.exercices[id].modification = !$scope.exercices[id].modification;
 	};
-	$scope.changeValue = function() {
-	    $scope.repetition = $scope.rep;
-	    $scope.poids = $scope.p;
-	    $scope.modification = false;
+	$scope.changeValue = function(id) {
+	    $scope.exercices[id].modification = !$scope.exercices[id].modification;
 	};
 })
 

@@ -3,43 +3,20 @@
     <div ng-controller="brasCtrl">
     <ion-list style="">
       <ion-item style="" class="item item-divider">-- BICEPS --</ion-item>
-      <a class="item item-thumbnail-left" ng-click="modifyValue()">
-	<img src="img/avatar.jpg">
-	<h2>Curl barre</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
+      <div ng-repeat="ex in exercices">
+	<a class="item item-thumbnail-left" ng-click="modifyValue(ex.id)">
+	  <img src="img/avatar.jpg">
+	  <h2>{{ ex.exercice }}</h2>
+	  <p>{{ ex.repetition }} répétitions à {{ ex.poids }} kg</p>
 	</a>
-	<div style="background-color: white;" ng-show="modification">
-	  <form ng-submit="changeValue()">
-	    Répétitions : <input type="number" ng-model="rep"><br/>
-	    Poids (en kg) : <input type="number" ng-model="p"><br/>
+	<div style="background-color: white;" ng-show="ex.modification">
+	  <form ng-submit="changeValue(ex.id)">
+	    Répétitions : <input type="number" ng-model="ex.repetition"><br/>
+	    Poids (en kg) : <input type="number" ng-model="ex.poids"><br/>
 	    <input type="submit" value="Valider">
 	  </form>
-	  </div>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Curl incliné</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Curl marteau</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Curl concentré</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Drag curl</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Pupitre</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
+	</div>
+      </div>
       <ion-item style="" class="item item-divider">-- TRICEPS --</ion-item>
       <a class="item item-thumbnail-left" href="#">
 	<img src="img/avatar.jpg">
