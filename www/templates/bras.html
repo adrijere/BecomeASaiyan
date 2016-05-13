@@ -18,33 +18,22 @@
 	</div>
       </div>
       <ion-item style="" class="item item-divider">-- TRICEPS --</ion-item>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Dips</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Barre au front</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Développé couché serré</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Extension nuque</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
-      <a class="item item-thumbnail-left" href="#">
-	<img src="img/avatar.jpg">
-	<h2>Poulie haute</h2>
-	<p>{{ repetition }} répétitions à {{ poids }} kg</p>
-      </a>
+      <div ng-repeat="ex in triceps">
+	<a class="item item-thumbnail-left" ng-click="modifyValue(ex.id)">
+	  <img src="img/avatar.jpg">
+	  <h2>{{ ex.exercice }}</h2>
+	  <p>{{ ex.repetition }} répétitions à {{ ex.poids }} kg</p>
+	</a>
+	<div style="background-color: white;" ng-show="ex.modification">
+	  <form ng-submit="changeValue(ex.id)">
+	    Répétitions : <input type="number" ng-model="ex.repetition"><br/>
+	    Poids (en kg) : <input type="number" ng-model="ex.poids"><br/>
+	    <input type="submit" value="Valider">
+	  </form>
+	</div>
+      </div>
     </ion-list>
     </div>
-            <button class="button button-energized  button-block" style="color:#000000;" id="entrainement-button1">Commencer la séance</button>
+    <button class="button button-energized  button-block" style="color:#000000;" id="entrainement-button1">Commencer la séance</button>
   </ion-content>
-  </ion-view>    
+</ion-view>    

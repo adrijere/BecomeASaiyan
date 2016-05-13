@@ -67,12 +67,56 @@ angular.module('app.controllers', [])
 				"poids" : 0,
 				"modification" : false
 			    }
+			   ];
+	$scope.triceps = [
+		{
+	    "id" : 6,
+	    "exercice" : "Dips",
+	    "repetition" : 0,
+	    "poids" : 0,
+	    "modification" : false
+	},
+			    {
+				"id" : 7,
+				"exercice" : "Barre au front",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    },
+			    {
+				"id" : 8,
+				"exercice" : "Développé couché serré",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    },
+			    {
+				"id" : 9,
+				"exercice" : "Extension nuque",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    },
+			    {
+				"id" : 10,
+				"exercice" : "Poulie haute",
+				"repetition" : 0,
+				"poids" : 0,
+				"modification" : false
+			    }
 			  ];
+
 	$scope.modifyValue = function(id) {
-	    $scope.exercices[id].modification = !$scope.exercices[id].modification;
+	    if (id < 6)
+		$scope.exercices[id].modification = !$scope.exercices[id].modification;
+	    else
+		$scope.triceps[id - 6].modification = !$scope.triceps[id - 6].modification;	
 	};
 	$scope.changeValue = function(id) {
-	    $scope.exercices[id].modification = !$scope.exercices[id].modification;
+	    if (id < 6)
+		$scope.exercices[id].modification = !$scope.exercices[id].modification;
+	    else
+		$scope.triceps[id - 6].modification = !$scope.triceps[id - 6].modification;
 	};
 })
 
