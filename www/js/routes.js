@@ -55,6 +55,16 @@ angular.module('app.routes', [])
   	templateUrl: 'templates/seance.html',
   	controller: 'seanceCtrl'
   })
+    
+	.state('resume', {
+  	    url: '/seance/resume/',
+  	    params: {
+          _name: "some default",
+		ex: { array:true }
+	    },
+  	    templateUrl: 'templates/resume.html',
+  	    controller: 'resumeCtrl'
+  })
 
   $urlRouterProvider.otherwise('/page1/settings')
 });

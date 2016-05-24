@@ -54,19 +54,28 @@ angular.module('app.controllers', [])
 		$scope._name[j] = $stateParams.ex[j];
 		$scope.ex[j] = JSON.parse(localStorage.getItem($stateParams.ex[j]));
 	}
-
-	console.log($scope.ex);
-
 	$scope.upCpt = function() {
 		console.log("I : " + $scope.i);
 		console.log("J : " + $scope.j);
 		if ($scope.ex[$scope.i][$scope.j + 1] == undefined && $scope.ex[$scope.i + 1] == undefined)
-			return; /* Envoyer vers le resumé de la séance */
-		if ($scope.j < $scope.ex[$scope.i].length - 1)
+		    $state.go('resume', { _name: "bras", ex: $scope.ex}); /* Envoyer vers le resumé de la séance */
+		else if ($scope.j < $scope.ex[$scope.i].length - 1)
 			$scope.j = $scope.j + 1;
 		else {
 			$scope.i = $scope.i + 1;
 			$scope.j = 0;
 		}
 	};
+})
+
+.controller('resumeCtrl', function($scope, $state, $stateParams) {
+	$scope._name = $stateParams._name;
+	$scope.exercices = [];
+	$scope.cpt = 0;
+	for(var i = 0; $stateParams.ex[i]; i++) {
+		for (var j = 0; $stateParams.ex[i][j]; j++) {
+			$scope.exercices[$scope.cpt] = $stateParams.ex[i][j];
+			$scope.cpt++;
+		}
+	}
 })

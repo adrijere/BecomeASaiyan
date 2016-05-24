@@ -1,0 +1,15 @@
+<ion-view style="background-color: rgb(255, 95, 0);" id="resume" title="Résume de la séance">
+<ion-content class="has-header" padding="true">
+<div ng-controller="resumeCtrl">
+  <h1 style="text-align: center;">Séance {{ name }} terminée</h1>
+  <div style="text-align: center; background-color:white; border-radius: 10px">
+    <div ng-repeat="ex in exercices">
+      <h4>-- {{ ex.exercice }} --</h4>
+     <p>{{ ex.repetition }} répétitions à {{ ex.poids }} kg</p>
+   </div>
+ </div>
+ <button class="button button-energized  button-block" style="color:#000000;" id="share_resume">Partager le résumé</button>
+ <button class="button button-energized  button-block" style="color:#000000;" ui-sref="home">Retour à l'accueil</button>  
+</div>
+</ion-content>
+</ion-view>    
