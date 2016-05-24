@@ -1,0 +1,9 @@
+<ion-view style="background-color: rgb(255, 95, 0);" id="page2" title="Séance en cours">
+<ion-content class="has-header" padding="true">
+<div ng-controller="seanceCtrl">
+	<h2>{{ _name[i] }} -- {{ ex[i][j].exercice }}</h2>
+	<p>{{ ex[i][j].repetition }} répétitions à {{ ex[i][j].poids }} kg</p>
+<button ng-click="upCpt()">Exercice suivant</button>
+</div>
+</ion-content>
+</ion-view>    
