@@ -4,8 +4,18 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('historiqueCtrl', function($scope) {
+.controller('historiqueCtrl', function($scope, $state) {
+	$scope.historique = JSON.parse(localStorage.getItem("historique"));
+	console.log($scope.historique);
 
+	$scope.goResum = function(muscle) {
+		$state.go('resumehisto', {ex: muscle});
+	}
+
+	$scope.deleteEx = function(index) {
+		$scope.historique.splice(index, 1);
+		localStorage.setItem("historique", JSON.stringify($scope.historique));
+	}
 })
 
 .controller('paramTresCtrl', function($scope) {
@@ -28,10 +38,15 @@ angular.module('app.controllers', [])
 	$scope.exercices = JSON.parse(localStorage.getItem("biceps"));
 	$scope.triceps = JSON.parse(localStorage.getItem("triceps"));
 	$scope.modifyValue = function(id) {
-		if (id < 6)
+		if (id < 6) {
 			$scope.exercices[id].modification = !$scope.exercices[id].modification;
+			localStorage.setItem("biceps", JSON.stringify($scope.exercices));
+		}
 		else
+		{
 			$scope.triceps[id - 6].modification = !$scope.triceps[id - 6].modification;	
+			localStorage.setItem("triceps", JSON.stringify($scope.triceps));
+		}
 	};
 	$scope.changeValue = function(id) {
 		if (id < 6) {
@@ -58,7 +73,7 @@ angular.module('app.controllers', [])
 		console.log("I : " + $scope.i);
 		console.log("J : " + $scope.j);
 		if ($scope.ex[$scope.i][$scope.j + 1] == undefined && $scope.ex[$scope.i + 1] == undefined)
-		    $state.go('resume', { _name: "bras", ex: $scope.ex}); /* Envoyer vers le resumé de la séance */
+			$state.go('resume', { _name: "bras", ex: $scope.ex}); /* Envoyer vers le resumé de la séance */
 		else if ($scope.j < $scope.ex[$scope.i].length - 1)
 			$scope.j = $scope.j + 1;
 		else {
@@ -78,4 +93,22 @@ angular.module('app.controllers', [])
 			$scope.cpt++;
 		}
 	}
+
+	$scope.saveHisto = function() {
+		$scope.historique = JSON.parse(localStorage.getItem("historique"));
+		date = new Date();
+		$scope.finseance = {
+			"date": (date.getDate()) + "/" + (date.getMonth() + 1) + "/" + (date.getFullYear()),
+			"_name": "bras",
+			"muscle": $scope.exercices
+		};
+		$scope.historique.unshift($scope.finseance);
+		localStorage.setItem("historique", JSON.stringify($scope.historique));
+		$state.go('home');
+	};
+})
+
+
+.controller('resumeHistoriqueCtrl', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
 })

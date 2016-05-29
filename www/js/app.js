@@ -101,10 +101,17 @@ if (window.StatusBar) {
    }
    ];
 
+   historique = [{
+    "date": "01/01/1970",
+    "_name": "Sangoku",
+    "muscle": []
+   }];
 
    if(typeof(Storage) != "undefined") {
     if (localStorage.getItem("biceps") == undefined)
     	localStorage.setItem("biceps", JSON.stringify(biceps));
+    if (localStorage.getItem("historique") == undefined)
+      localStorage.setItem("historique", JSON.stringify(historique));
     if (localStorage.getItem("triceps") == undefined)
     	localStorage.setItem("triceps", JSON.stringify(triceps));
   } else {

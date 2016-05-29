@@ -15,8 +15,19 @@ angular.module('app.routes', [])
 
   .state('historique', {
   	url: '/history',
+    cache: false,
   	templateUrl: 'templates/historique.html',
   	controller: 'historiqueCtrl'
+  })
+
+.state('resumehisto', {
+    url: '/history/resume',
+    params:
+    {
+      ex: { array:true }
+    },
+    templateUrl: 'templates/resumehisto.html',
+    controller: 'resumeHistoriqueCtrl'
   })
 
   .state('paramTres', {
@@ -51,6 +62,7 @@ angular.module('app.routes', [])
 
   .state('seance', {
   	url: '/seance/{ex}',
+    cache: false,
   	params: {ex: { array:true }},
   	templateUrl: 'templates/seance.html',
   	controller: 'seanceCtrl'
@@ -58,6 +70,7 @@ angular.module('app.routes', [])
     
 	.state('resume', {
   	    url: '/seance/resume/',
+        cache: false,
   	    params: {
           _name: "some default",
 		ex: { array:true }

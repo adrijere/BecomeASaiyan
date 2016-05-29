@@ -1,9 +1,14 @@
 <ion-view style="background-color: rgb(255, 95, 0);" id="page3" title="Historique">
-    <ion-content class="has-header" padding="true">
-        <ion-list style="">
-            <ion-item style="">Séance du 22/04/16</ion-item>
-            <ion-item style="">Séance du 20/04/16</ion-item>
-            <ion-item style="">Séance du 19/04/16</ion-item>
-        </ion-list>
-    </ion-content>
+<ion-content class="has-header" padding="true">
+
+<div ng-controller="historiqueCtrl">
+	<div style="text-align: center; background-color:white; border-radius: 10px">
+		<ion-list style="">
+		<div ng-repeat="ex in historique">
+			<h4><span ng-click="goResum(ex.muscle)">Séance du {{ ex.date }} -- séance {{ ex._name }}</span> -- <span ng-click="deleteEx(this)"><strong>X</strong><span></h4>
+		</div>
+	</ion-list>
+</div>
+</div>
+</ion-content>
 </ion-view>
