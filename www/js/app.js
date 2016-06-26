@@ -107,7 +107,18 @@ if (window.StatusBar) {
     "muscle": []
    }];
 
+   profile = {
+    "prenom": "Sangoku",
+    "poids" : 80,
+    "taille": "1m80",
+    "but": "Se muscler",
+    "objectif": 85,
+    "cout" : 0
+   };
+
    if(typeof(Storage) != "undefined") {
+    if(localStorage.getItem("profile") == undefined)
+      localStorage.setItem("profile", JSON.stringify(profile));
     if (localStorage.getItem("biceps") == undefined)
     	localStorage.setItem("biceps", JSON.stringify(biceps));
     if (localStorage.getItem("historique") == undefined)
@@ -123,6 +134,7 @@ if (window.StatusBar) {
 .config(function($stateProvider, $urlRouterProvider){
 	$stateProvider.state('home', {
 		url:'/home',
+    cache: false,
 		templateUrl:'templates/home.html'
 	})
 	$urlRouterProvider.otherwise('/home')

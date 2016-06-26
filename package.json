@@ -20,13 +20,13 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
   ],
   "cordovaPlatforms": [
     {
       "platform": "android",
-      "version": "5.0.0",
-      "locator": "android@5.0.0"
+      "version": "4.4.2",
+      "locator": "android@4.4.2"
     }
   ]
 }

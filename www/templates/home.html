@@ -1,23 +1,25 @@
 <ion-view style="background-color: rgb(247, 151, 94);" id="home" title="Home">
     <ion-content class="has-header" padding="true">
+    <div ng-controller="paramTresCtrl">
         <h2 style="color: rgb(0, 0, 0); text-align:center;" id="aProposDeNous-heading1">BecomeASaiyan</h2>
         <div style="color: rgb(0, 0, 0); text-align: justify;" id="aProposDeNous-markdown1">
           <ion-list style="">
 	    <ion-item style="" class="item-thumbnail-left">
 	      <img src="img/avatar.jpg">
-	      <h2>YOUR NAME</h2>
-	      <p>POIDS kg -- TAILLE</p>
+	      <h2>{{ profile.prenom }}</h2>
+	      <p>{{ profile.poids }}kg -- {{ profile.taille }}</p>
 	    </ion-item>
 	    <label style="" class="item">
-	      <span class="input-label">Votre but :</span><span>Se muscler</span></label>
+	      <span class="input-label">Votre but :</span><span>{{ profile.but }}</span></label>
 	    <label style="" class="item item-input">
-	      <span class="input-label">Objectif en kg</span><textarea placeholder="Objectif"> 80</textarea>
+	      <span class="input-label">Objectif en kg</span><span>{{ profile.objectif }}</span>
 	    </label>
 	    <label style="" class="item item-input">
-	      <span class="input-label">Coup en € des compléments</span><textarea placeholder=""> </textarea>
+	      <span class="input-label">Coup en € des compléments</span><span>{{ profile.cout }}</span>
 	    </label>
 	  </ion-list>
 	  
         </div>
+    </div>
     </ion-content>
 </ion-view>

@@ -32,6 +32,7 @@ angular.module('app.routes', [])
 
   .state('paramTres', {
   	url: '/settings',
+    cache: false,
   	templateUrl: 'templates/paramTres.html',
   	controller: 'paramTresCtrl'
   })

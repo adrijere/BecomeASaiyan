@@ -1,25 +1,28 @@
 <ion-view style="background-color: rgb(255, 95, 0);" id="page4" title="Paramètres">
-    <ion-content class="has-header" padding="true">
-        <ion-list style="">
-            <ion-item style="" class="item-thumbnail-left">
-                <img src="img/avatar.jpg">
-                <h2>Vincent</h2>
-                <p>78kg -- 1m76</p>
-            </ion-item>
-            <label style="" class="item item-select">
-                <span class="input-label">Votre but :</span>
-                <select>
-                    <option>Se muscler</option>
-                    <option>Perdre du poids</option>
-                </select>
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Objectif en kg</span><textarea placeholder="Objectif"> 80</textarea>
-            </label>
-            <label style="" class="item item-input">
-                <span class="input-label">Coup en €</span><textarea placeholder=""> </textarea>
-            </label>
-        </ion-list>
-        <button class="button button-energized  button-block" style="color:#000000;" id="paramTres-button2">Gérer mes compléments</button>
-    </ion-content>
+<ion-content class="has-header" padding="true">
+<div ng-controller="paramTresCtrl">
+    <ion-list style="">
+        <ion-item style="" class="item-thumbnail-left">
+            <img src="img/avatar.jpg">
+            <h2><textarea ng-model="profile.prenom" name="prenom" placeholder="Prénom" id="prenom">{{ profile.prenom }}</textarea></h2>
+            <p><textarea ng-model="profile.poids" name="poids" placeholder="Poids" id="poids">{{ profile.poids }}</textarea>kg -- <textarea name="taille" placeholder="Taille" ng-model="profile.taille" id="taille">{{ profile.taille }}</textarea></p>
+        </ion-item>
+    <label style="" class="item item-select">
+    <span class="input-label">Votre but :</span>
+    <select name="but">
+        <option>Se muscler</option>
+        <option>Perdre du poids</option>
+    </select>
+    </label>
+    <label style="" class="item item-input">
+        <span class="input-label">Objectif en kg</span><textarea ng-model="profile.objectif" placeholder="Objectif" name="objectif" id="objectif">{{ profile.objectif }}</textarea>
+    </label>
+    <label style="" class="item item-input">
+        <span class="input-label">Coup en €</span><textarea placeholder="Cout" name="cout" ng-model="profile.cout" id="cout">{{ profile.cout }}</textarea>
+    </label>
+    </ion-list>
+    <button class="button button-energized  button-block" style="color:#000000;" id="paramTres-button2" ng-click="saveProfile()">Sauvegarder mes paramètres</button>
+    <button class="button button-energized  button-block" style="color:#000000;" id="paramTres-button2">Gérer mes compléments</button>
+</div>
+</ion-content>
 </ion-view>

@@ -19,7 +19,12 @@ angular.module('app.controllers', [])
 })
 
 .controller('paramTresCtrl', function($scope) {
+	$scope.profile = JSON.parse(localStorage.getItem("profile"));
 
+	$scope.saveProfile = function() {
+		console.log($scope.profile);
+		localStorage.setItem("profile", JSON.stringify($scope.profile));
+	};
 })
 
 .controller('informationsEtStatistiquesCtrl', function($scope) {
@@ -68,6 +73,21 @@ angular.module('app.controllers', [])
 	for (var j = 0; j < $stateParams.ex.length; j++) {
 		$scope._name[j] = $stateParams.ex[j];
 		$scope.ex[j] = JSON.parse(localStorage.getItem($stateParams.ex[j]));
+	}
+	for (var k = 0; k < $scope.ex.length; k++) {
+		for (var l = 0; l < $scope.ex[k].length; l++) {
+			console.log("Name: " + $scope.ex[k][l].exercice);
+			console.log("Poids: " + $scope.ex[k][l].poids);
+			console.log("Reps: " + $scope.ex[k][l].repetition);
+			console.log("K: " + k + " && L : " + l);
+			if ($scope.ex[k][l].poids == 0 && $scope.ex[k][l].repetition == 0)
+			{
+				console.log("Deleted...");
+				$scope.ex[k].splice(l, 1);
+				l--;
+			}
+			console.log("-----------");
+		}
 	}
 	$scope.upCpt = function() {
 		console.log("I : " + $scope.i);
