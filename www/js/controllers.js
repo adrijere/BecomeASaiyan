@@ -78,6 +78,18 @@ angular.module('app.controllers', [])
 	};
 })
 
+.controller('jambesCtrl', function($scope) {
+	$scope.jambes = JSON.parse(localStorage.getItem("jambes"));
+	$scope.modifyValue = function(id) {
+			$scope.jambes[id].modification = !$scope.jambes[id].modification;
+			localStorage.setItem("jambes", JSON.stringify($scope.jambes));
+	};
+	$scope.changeValue = function(id) {
+			$scope.jambes[id].modification = !$scope.jambes[id].modification;
+			localStorage.setItem("jambes", JSON.stringify($scope.jambes));
+	};
+})
+
 .controller('seanceCtrl', function($scope, $state, $stateParams) {
 	$scope.i = 0;
 	$scope.j = 0;

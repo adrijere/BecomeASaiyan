@@ -67,6 +67,12 @@ angular.module('app.routes', [])
     controller: 'dosCtrl'
   })
 
+.state('jambes', {
+    url: '/jambes',
+    templateUrl: 'templates/jambes.html',
+    controller: 'jambesCtrl'
+  })
+
   .state('seance', {
   	url: '/seance/{ex}',
     cache: false,

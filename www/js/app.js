@@ -152,6 +152,50 @@ if (window.StatusBar) {
    }
    ];
 
+ jambes = [{
+     "id" : 0,
+     "exercice" : "Squat",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 1,
+     "exercice" : "Front squat",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 2,
+     "exercice" : "Leg curl",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 3,
+     "exercice" : "Leg extension",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 4,
+     "exercice" : "Presse",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 5,
+     "exercice" : "Fentes",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   }
+   ];
+
    historique = [{
     "date": "01/01/1970",
     "_name": "Sangoku",
@@ -178,6 +222,8 @@ if (window.StatusBar) {
     	localStorage.setItem("triceps", JSON.stringify(triceps));
     if (localStorage.getItem("dos") == undefined)
       localStorage.setItem("dos", JSON.stringify(dos));
+        if (localStorage.getItem("jambes") == undefined)
+      localStorage.setItem("jambes", JSON.stringify(jambes));
   } else {
   	alert("Impossible de récupérer les informations sur vos exercices.");
   }
