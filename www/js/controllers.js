@@ -13,6 +13,7 @@ angular.module('app.controllers', [])
 	}
 
 	$scope.deleteEx = function(index) {
+		console.log(index);
 		$scope.historique.splice(index, 1);
 		localStorage.setItem("historique", JSON.stringify($scope.historique));
 	}
@@ -65,11 +66,24 @@ angular.module('app.controllers', [])
 	};
 })
 
+.controller('dosCtrl', function($scope) {
+	$scope.dos = JSON.parse(localStorage.getItem("dos"));
+	$scope.modifyValue = function(id) {
+			$scope.dos[id].modification = !$scope.dos[id].modification;
+			localStorage.setItem("dos", JSON.stringify($scope.dos));
+	};
+	$scope.changeValue = function(id) {
+			$scope.dos[id].modification = !$scope.dos[id].modification;
+			localStorage.setItem("dos", JSON.stringify($scope.dos));
+	};
+})
+
 .controller('seanceCtrl', function($scope, $state, $stateParams) {
 	$scope.i = 0;
 	$scope.j = 0;
 	$scope.ex = [];
 	$scope._name =[];
+	$scope._nameseance = $stateParams._nameseance;
 	for (var j = 0; j < $stateParams.ex.length; j++) {
 		$scope._name[j] = $stateParams.ex[j];
 		$scope.ex[j] = JSON.parse(localStorage.getItem($stateParams.ex[j]));
@@ -80,7 +94,7 @@ angular.module('app.controllers', [])
 			console.log("Poids: " + $scope.ex[k][l].poids);
 			console.log("Reps: " + $scope.ex[k][l].repetition);
 			console.log("K: " + k + " && L : " + l);
-			if ($scope.ex[k][l].poids == 0 && $scope.ex[k][l].repetition == 0)
+			if ($scope.ex[k][l].poids <= 0 || $scope.ex[k][l].repetition <= 0)
 			{
 				console.log("Deleted...");
 				$scope.ex[k].splice(l, 1);
@@ -93,7 +107,7 @@ angular.module('app.controllers', [])
 		console.log("I : " + $scope.i);
 		console.log("J : " + $scope.j);
 		if ($scope.ex[$scope.i][$scope.j + 1] == undefined && $scope.ex[$scope.i + 1] == undefined)
-			$state.go('resume', { _name: "bras", ex: $scope.ex}); /* Envoyer vers le resumé de la séance */
+			$state.go('resume', { _nameseance: $scope._nameseance, ex: $scope.ex}); /* Envoyer vers le resumé de la séance */
 		else if ($scope.j < $scope.ex[$scope.i].length - 1)
 			$scope.j = $scope.j + 1;
 		else {
@@ -104,7 +118,7 @@ angular.module('app.controllers', [])
 })
 
 .controller('resumeCtrl', function($scope, $state, $stateParams) {
-	$scope._name = $stateParams._name;
+	$scope._nameseance = $stateParams._nameseance;
 	$scope.exercices = [];
 	$scope.cpt = 0;
 	for(var i = 0; $stateParams.ex[i]; i++) {
@@ -119,7 +133,7 @@ angular.module('app.controllers', [])
 		date = new Date();
 		$scope.finseance = {
 			"date": (date.getDate()) + "/" + (date.getMonth() + 1) + "/" + (date.getFullYear()),
-			"_name": "bras",
+			"_name": $scope._nameseance,
 			"muscle": $scope.exercices
 		};
 		$scope.historique.unshift($scope.finseance);

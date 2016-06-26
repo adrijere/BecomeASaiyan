@@ -101,6 +101,57 @@ if (window.StatusBar) {
    }
    ];
 
+   dos = [{
+     "id" : 0,
+     "exercice" : "Traction pronation",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 1,
+     "exercice" : "Traction supination",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 2,
+     "exercice" : "Rowing pronation",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 3,
+     "exercice" : "Rowing supination",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 4,
+     "exercice" : "Soulevé de terre",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 5,
+     "exercice" : "Tirage horizontal pronation",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+      {
+     "id" : 6,
+     "exercice" : "Tirage horizontal supination",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   }
+   ];
+
    historique = [{
     "date": "01/01/1970",
     "_name": "Sangoku",
@@ -125,6 +176,8 @@ if (window.StatusBar) {
       localStorage.setItem("historique", JSON.stringify(historique));
     if (localStorage.getItem("triceps") == undefined)
     	localStorage.setItem("triceps", JSON.stringify(triceps));
+    if (localStorage.getItem("dos") == undefined)
+      localStorage.setItem("dos", JSON.stringify(dos));
   } else {
   	alert("Impossible de récupérer les informations sur vos exercices.");
   }

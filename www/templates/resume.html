@@ -1,7 +1,7 @@
 <ion-view style="background-color: rgb(255, 95, 0);" id="resume" title="Résume de la séance">
 <ion-content class="has-header" padding="true">
 <div ng-controller="resumeCtrl">
-  <h1 style="text-align: center;">Séance {{ name }} terminée</h1>
+  <h1 style="text-align: center;">Séance {{ _nameseance }} terminée</h1>
   <div style="text-align: center; background-color:white; border-radius: 10px">
     <div ng-repeat="ex in exercices">
       <h4>-- {{ ex.exercice }} --</h4>

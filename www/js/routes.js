@@ -61,10 +61,19 @@ angular.module('app.routes', [])
   	controller: 'brasCtrl'
   })
 
+.state('dos', {
+    url: '/dos',
+    templateUrl: 'templates/dos.html',
+    controller: 'dosCtrl'
+  })
+
   .state('seance', {
   	url: '/seance/{ex}',
     cache: false,
-  	params: {ex: { array:true }},
+  	params: {
+      ex: { array:true },
+    _nameseance: {type: String} 
+  },
   	templateUrl: 'templates/seance.html',
   	controller: 'seanceCtrl'
   })
@@ -73,7 +82,7 @@ angular.module('app.routes', [])
   	    url: '/seance/resume/',
         cache: false,
   	    params: {
-          _name: "some default",
+          _nameseance: { type: String },
 		ex: { array:true }
 	    },
   	    templateUrl: 'templates/resume.html',

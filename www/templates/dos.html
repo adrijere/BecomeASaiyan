@@ -1,0 +1,24 @@
+<ion-view style="background-color: rgb(255, 95, 0);" id="page2" title="Séance dos">
+  <ion-content class="has-header" padding="true">
+    <div ng-controller="dosCtrl">
+    <ion-list style="">
+      <ion-item style="" class="item item-divider">-- DOS --</ion-item>
+      <div ng-repeat="ex in dos">
+	<a class="item item-thumbnail-left" ng-click="modifyValue(ex.id)">
+	  <img src="img/avatar.jpg">
+	  <h2>{{ ex.exercice }}</h2>
+	  <p>{{ ex.repetition }} répétitions à {{ ex.poids }} kg</p>
+	</a>
+	<div style="background-color: white;" ng-show="ex.modification">
+	  <form ng-submit="changeValue(ex.id)">
+	    Répétitions : <input type="number" ng-model="ex.repetition"><br/>
+	    Poids (en kg) : <input type="number" ng-model="ex.poids"><br/>
+	    <input type="submit" value="Valider">
+	  </form>
+	</div>
+      </div>
+    </ion-list>
+    </div>
+    <button class="button button-energized  button-block" style="color:#000000;" id="entrainement-button1" ui-sref="seance({_nameseance: 'dos', ex: ['dos']})">Commencer la séance</button>
+  </ion-content>
+</ion-view>    
