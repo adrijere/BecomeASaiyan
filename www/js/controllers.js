@@ -29,7 +29,8 @@ angular.module('app.controllers', [])
 })
 
 .controller('informationsEtStatistiquesCtrl', function($scope) {
-
+    $scope.profile = JSON.parse(localStorage.getItem("profile"));
+    $scope.prot = 2.2 * ($scope.profile.poids);
 })
 
 .controller('chronomTreCtrl', function($scope) {
@@ -89,6 +90,31 @@ angular.module('app.controllers', [])
 			localStorage.setItem("jambes", JSON.stringify($scope.jambes));
 	};
 })
+
+.controller('epaulesCtrl', function($scope) {
+	$scope.epaules = JSON.parse(localStorage.getItem("epaules"));
+	$scope.modifyValue = function(id) {
+			$scope.epaules[id].modification = !$scope.epaules[id].modification;
+			localStorage.setItem("epaules", JSON.stringify($scope.epaules));
+	};
+	$scope.changeValue = function(id) {
+			$scope.epaules[id].modification = !$scope.epaules[id].modification;
+			localStorage.setItem("epaules", JSON.stringify($scope.epaules));
+	};
+})
+
+.controller('pectorauxCtrl', function($scope) {
+	$scope.pectoraux = JSON.parse(localStorage.getItem("pectoraux"));
+	$scope.modifyValue = function(id) {
+			$scope.pectoraux[id].modification = !$scope.pectoraux[id].modification;
+			localStorage.setItem("pectoraux", JSON.stringify($scope.pectoraux));
+	};pectoraux
+	$scope.changeValue = function(id) {
+			$scope.pectoraux[id].modification = !$scope.pectoraux[id].modification;
+			localStorage.setItem("pectoraux", JSON.stringify($scope.pectoraux));
+	};
+})
+
 
 .controller('seanceCtrl', function($scope, $state, $stateParams) {
 	$scope.i = 0;

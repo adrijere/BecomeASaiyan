@@ -38,7 +38,8 @@ angular.module('app.routes', [])
   })
 
   .state('informationsEtStatistiques', {
-  	url: '/infos_stats',
+      url: '/infos_stats',
+      cache: false,
   	templateUrl: 'templates/informationsEtStatistiques.html',
   	controller: 'informationsEtStatistiquesCtrl'
   })
@@ -72,6 +73,19 @@ angular.module('app.routes', [])
     templateUrl: 'templates/jambes.html',
     controller: 'jambesCtrl'
   })
+
+.state('epaules', {
+    url: '/epaules',
+    templateUrl: 'templates/epaules.html',
+    controller: 'epaulesCtrl'
+  })
+
+.state('pectoraux', {
+    url: '/pectoraux',
+    templateUrl: 'templates/pectoraux.html',
+    controller: 'pectorauxCtrl'
+  })
+
 
   .state('seance', {
   	url: '/seance/{ex}',

@@ -143,7 +143,7 @@ if (window.StatusBar) {
      "poids" : 0,
      "modification" : false
    },
-      {
+   {
      "id" : 6,
      "exercice" : "Tirage horizontal supination",
      "repetition" : 0,
@@ -152,7 +152,7 @@ if (window.StatusBar) {
    }
    ];
 
- jambes = [{
+   jambes = [{
      "id" : 0,
      "exercice" : "Squat",
      "repetition" : 0,
@@ -196,22 +196,124 @@ if (window.StatusBar) {
    }
    ];
 
+   epaules = [{
+     "id" : 0,
+     "exercice" : "Elévations latérales",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 1,
+     "exercice" : "Elévations frontales",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 2,
+     "exercice" : "Oiseau",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 3,
+     "exercice" : "Shrug",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 4,
+     "exercice" : "Développé militaire haltère",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 5,
+     "exercice" : "Développé militaire barre",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   }
+   ];
+
+pectoraux = [{
+     "id" : 0,
+     "exercice" : "Développé couché haltère",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 1,
+     "exercice" : "Développé couché barre",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 2,
+     "exercice" : "Développé incliné haltère",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 3,
+     "exercice" : "Développé incliné barre",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 4,
+     "exercice" : "Développé décliné haltère",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 5,
+     "exercice" : "Développé décliné barre",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+      {
+     "id" : 6,
+     "exercice" : "Développé écarté",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   },
+   {
+     "id" : 7,
+     "exercice" : "Dips",
+     "repetition" : 0,
+     "poids" : 0,
+     "modification" : false
+   }
+   ];
+
    historique = [{
     "date": "01/01/1970",
     "_name": "Sangoku",
     "muscle": []
-   }];
+  }];
 
-   profile = {
+  profile = {
     "prenom": "Sangoku",
     "poids" : 80,
     "taille": "1m80",
     "but": "Se muscler",
     "objectif": 85,
     "cout" : 0
-   };
+  };
 
-   if(typeof(Storage) != "undefined") {
+  if(typeof(Storage) != "undefined") {
     if(localStorage.getItem("profile") == undefined)
       localStorage.setItem("profile", JSON.stringify(profile));
     if (localStorage.getItem("biceps") == undefined)
@@ -222,8 +324,12 @@ if (window.StatusBar) {
     	localStorage.setItem("triceps", JSON.stringify(triceps));
     if (localStorage.getItem("dos") == undefined)
       localStorage.setItem("dos", JSON.stringify(dos));
-        if (localStorage.getItem("jambes") == undefined)
+    if (localStorage.getItem("jambes") == undefined)
       localStorage.setItem("jambes", JSON.stringify(jambes));
+    if (localStorage.getItem("epaules") == undefined)
+      localStorage.setItem("epaules", JSON.stringify(epaules));
+    if (localStorage.getItem("pectoraux") == undefined)
+      localStorage.setItem("pectoraux", JSON.stringify(pectoraux));
   } else {
   	alert("Impossible de récupérer les informations sur vos exercices.");
   }
@@ -234,7 +340,7 @@ if (window.StatusBar) {
 	$stateProvider.state('home', {
 		url:'/home',
     cache: false,
-		templateUrl:'templates/home.html'
-	})
+    templateUrl:'templates/home.html'
+  })
 	$urlRouterProvider.otherwise('/home')
 });
