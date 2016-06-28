@@ -9,7 +9,7 @@
         </ion-item>
     <label style="" class="item item-select">
     <span class="input-label">Votre but :</span>
-    <select name="but">
+    <select name="but" ng-model="profile.but" id ="but">
         <option>Se muscler</option>
         <option>Perdre du poids</option>
     </select>
@@ -19,6 +19,9 @@
     </label>
     <label style="" class="item item-input">
         <span class="input-label">Coup en €</span><textarea placeholder="Cout" name="cout" ng-model="profile.cout" id="cout">{{ profile.cout }}</textarea>
+    </label>
+    <label style="" class="item item-input">
+        <span class="input-label">KCal journaliers</span><textarea placeholder="KCal" name="kcal" ng-model="profile.kcal" id="kcal">{{ profile.kcal }}</textarea>
     </label>
     </ion-list>
     <button class="button button-energized  button-block" style="color:#000000;" id="paramTres-button2" ng-click="saveProfile()">Sauvegarder mes paramètres</button>

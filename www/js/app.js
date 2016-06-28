@@ -310,7 +310,8 @@ pectoraux = [{
     "taille": "1m80",
     "but": "Se muscler",
     "objectif": 85,
-    "cout" : 0
+    "cout" : 0,
+    "kcal": 0
   };
 
   if(typeof(Storage) != "undefined") {
