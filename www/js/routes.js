@@ -46,6 +46,7 @@ angular.module('app.routes', [])
 
   .state('chronomTre', {
   	url: '/chronometer',
+    cache: false,
   	templateUrl: 'templates/chronomTre.html',
   	controller: 'chronomTreCtrl'
   })

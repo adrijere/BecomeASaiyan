@@ -3,3 +3,32 @@
 .item-divider {
     text-align: center;
 }
+
+.histo {
+    cursor: pointer;
+    border: 2px dashed black;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.serie {
+    margin-left: 15px;
+}
+
+.button-edit {
+    border-color: transparent;
+    background-color: #f8f8f8;
+    color: #444;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    font-weight: bold;
+}

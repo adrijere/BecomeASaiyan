@@ -21,46 +21,58 @@ if (window.StatusBar) {
     }
 
     biceps = [{
-     "id" : 0,
-     "exercice" : "Curl barre",
-     "repetition" : 0,
-     "poids" : 0,
-     "modification" : false
-   },
-   {
+      "id" : 0,
+      "exercice" : "Curl barre",
+      "repetition" : 0,
+      "serie" : [],
+      "poids" : 0,
+      "modification" : false,
+      "image": "img/avatar.jpg"
+    },
+    {
      "id" : 1,
      "exercice" : "Curl incliné",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image": "img/avatar.jpg"
    },
    {
      "id" : 2,
      "exercice" : "Curl marteau",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image": "img/avatar.jpg"       
    },
    {
      "id" : 3,
      "exercice" : "Curl concentré",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image": "img/avatar.jpg"
    },
    {
      "id" : 4,
      "exercice" : "Drag curl",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image": "img/avatar.jpg"
    },
    {
      "id" : 5,
      "exercice" : "Pupitre",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image": "img/avatar.jpg"
    }
    ];
    triceps = [
@@ -68,36 +80,46 @@ if (window.StatusBar) {
      "id" : 6,
      "exercice" : "Dips",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 7,
      "exercice" : "Barre au front",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 8,
      "exercice" : "Développé couché serré",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 9,
      "exercice" : "Extension nuque",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 10,
      "exercice" : "Poulie haute",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    }
    ];
 
@@ -105,50 +127,64 @@ if (window.StatusBar) {
      "id" : 0,
      "exercice" : "Traction pronation",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 1,
      "exercice" : "Traction supination",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 2,
      "exercice" : "Rowing pronation",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 3,
      "exercice" : "Rowing supination",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 4,
      "exercice" : "Soulevé de terre",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 5,
      "exercice" : "Tirage horizontal pronation",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 6,
      "exercice" : "Tirage horizontal supination",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    }
    ];
 
@@ -156,43 +192,55 @@ if (window.StatusBar) {
      "id" : 0,
      "exercice" : "Squat",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 1,
      "exercice" : "Front squat",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 2,
      "exercice" : "Leg curl",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 3,
      "exercice" : "Leg extension",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 4,
      "exercice" : "Presse",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 5,
      "exercice" : "Fentes",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    }
    ];
 
@@ -200,101 +248,129 @@ if (window.StatusBar) {
      "id" : 0,
      "exercice" : "Elévations latérales",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 1,
      "exercice" : "Elévations frontales",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 2,
      "exercice" : "Oiseau",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 3,
      "exercice" : "Shrug",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 4,
      "exercice" : "Développé militaire haltère",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 5,
      "exercice" : "Développé militaire barre",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    }
    ];
 
-pectoraux = [{
+   pectoraux = [{
      "id" : 0,
      "exercice" : "Développé couché haltère",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 1,
      "exercice" : "Développé couché barre",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 2,
      "exercice" : "Développé incliné haltère",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 3,
      "exercice" : "Développé incliné barre",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 4,
      "exercice" : "Développé décliné haltère",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 5,
      "exercice" : "Développé décliné barre",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
-      {
+   {
      "id" : 6,
      "exercice" : "Développé écarté",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    },
    {
      "id" : 7,
      "exercice" : "Dips",
      "repetition" : 0,
+     "serie" : [],
      "poids" : 0,
-     "modification" : false
+     "modification" : false,
+     "image" : "img/avatar.jpg"
    }
    ];
 
@@ -332,7 +408,7 @@ pectoraux = [{
     if (localStorage.getItem("pectoraux") == undefined)
       localStorage.setItem("pectoraux", JSON.stringify(pectoraux));
   } else {
-  	alert("Impossible de récupérer les informations sur vos exercices.");
+  	alert("Impossible de sauvegarder les informations sur votre mobile.");
   }
 });
 })

@@ -34,14 +34,30 @@ angular.module('app.controllers', [])
 })
 
 .controller('chronomTreCtrl', function($scope) {
+    $scope.timermin = 1;
+    $scope.timersec = 0;
 
+    $scope.start = function() {
+	setInterval(function(){
+	    if($scope.timersec == 00)
+	    {
+		$scope.timermin--;
+		if ($scope.timersec == 00 && $scope.timermin == -1){
+		    console.log("STOP");
+		    return (1); /* Le soucis vient surement d'ici pour le timer. je quitte la fonction mais pas le setInterval */
+		}
+		$scope.timersec = 60;
+	    }
+	    $scope.timersec--;
+	},1000);
+    }
 })
 
 .controller('aProposDeNousCtrl', function($scope) {
 	
 })
 
-.controller('brasCtrl', function($scope) {
+    .controller('brasCtrl', function($scope) {
 	$scope.exercices = JSON.parse(localStorage.getItem("biceps"));
 	$scope.triceps = JSON.parse(localStorage.getItem("triceps"));
 	$scope.modifyValue = function(id) {
@@ -58,10 +74,18 @@ angular.module('app.controllers', [])
 	$scope.changeValue = function(id) {
 		if (id < 6) {
 			$scope.exercices[id].modification = !$scope.exercices[id].modification;
+			$scope.exercices[id].serie = new Array($scope.exercices[id].repetition);
+			for (var i = 0; i < $scope.exercices[id].serie.length; i++) {
+				$scope.exercices[id].serie[i] = "10x" + $scope.exercices[id].poids;
+			}
 			localStorage.setItem("biceps", JSON.stringify($scope.exercices));
 		}
 		else {
 			$scope.triceps[id - 6].modification = !$scope.triceps[id - 6].modification;
+			$scope.triceps[id - 6].serie = new Array($scope.triceps[id - 6].repetition);
+			for (var i = 0; i < $scope.triceps[id - 6].serie.length; i++) {
+				$scope.triceps[id - 6].serie[i] = "10x" + $scope.triceps[id - 6].poids;
+			}
 			localStorage.setItem("triceps", JSON.stringify($scope.triceps));
 		}
 	};
@@ -75,6 +99,10 @@ angular.module('app.controllers', [])
 	};
 	$scope.changeValue = function(id) {
 			$scope.dos[id].modification = !$scope.dos[id].modification;
+			$scope.dos[id].serie = new Array($scope.dos[id].repetition);
+			for (var i = 0; i < $scope.dos[id].serie.length; i++) {
+				$scope.dos[id].serie[i] = "10x" + $scope.dos[id].poids;
+			}
 			localStorage.setItem("dos", JSON.stringify($scope.dos));
 	};
 })
@@ -87,6 +115,10 @@ angular.module('app.controllers', [])
 	};
 	$scope.changeValue = function(id) {
 			$scope.jambes[id].modification = !$scope.jambes[id].modification;
+			$scope.jambes[id].serie = new Array($scope.jambes[id].repetition);
+			for (var i = 0; i < $scope.jambes[id].serie.length; i++) {
+				$scope.jambes[id].serie[i] = "10x" + $scope.jambes[id].poids;
+			}
 			localStorage.setItem("jambes", JSON.stringify($scope.jambes));
 	};
 })
@@ -99,6 +131,10 @@ angular.module('app.controllers', [])
 	};
 	$scope.changeValue = function(id) {
 			$scope.epaules[id].modification = !$scope.epaules[id].modification;
+			$scope.epaules[id].serie = new Array($scope.epaules[id].repetition);
+			for (var i = 0; i < $scope.epaules[id].serie.length; i++) {
+				$scope.epaules[id].serie[i] = "10x" + $scope.epaules[id].poids;
+			}
 			localStorage.setItem("epaules", JSON.stringify($scope.epaules));
 	};
 })
@@ -111,6 +147,10 @@ angular.module('app.controllers', [])
 	};pectoraux
 	$scope.changeValue = function(id) {
 			$scope.pectoraux[id].modification = !$scope.pectoraux[id].modification;
+			$scope.pectoraux[id].serie = new Array($scope.pectoraux[id].repetition);
+			for (var i = 0; i < $scope.pectoraux[id].serie.length; i++) {
+				$scope.pectoraux[id].serie[i] = "10x" + $scope.pectoraux[id].poids;
+			}
 			localStorage.setItem("pectoraux", JSON.stringify($scope.pectoraux));
 	};
 })
@@ -130,8 +170,8 @@ angular.module('app.controllers', [])
 		for (var l = 0; l < $scope.ex[k].length; l++) {
 			console.log("Name: " + $scope.ex[k][l].exercice);
 			console.log("Poids: " + $scope.ex[k][l].poids);
-			console.log("Reps: " + $scope.ex[k][l].repetition);
-			console.log("K: " + k + " && L : " + l);
+		    console.log("Reps: " + $scope.ex[k][l].repetition);
+		    console.log("K: " + k + " && L : " + l);
 			if ($scope.ex[k][l].poids <= 0 || $scope.ex[k][l].repetition <= 0)
 			{
 				console.log("Deleted...");
@@ -141,7 +181,8 @@ angular.module('app.controllers', [])
 			console.log("-----------");
 		}
 	}
-	$scope.upCpt = function() {
+
+    $scope.upCpt = function() {
 		console.log("I : " + $scope.i);
 		console.log("J : " + $scope.j);
 		if ($scope.ex[$scope.i][$scope.j + 1] == undefined && $scope.ex[$scope.i + 1] == undefined)
@@ -153,6 +194,22 @@ angular.module('app.controllers', [])
 			$scope.j = 0;
 		}
 	};
+    $scope.editRep = function(index, i, j) {
+	var _rep = prompt("Nombre de répétitions :");
+	var tmp = $scope.ex[i][j].serie[index].split("x");
+	if (!isNaN(_rep))
+	    $scope.ex[i][j].serie[index] = _rep + 'x' + tmp[1];
+	else
+	    alert("Veuillez rentrer un nombre.");
+    };
+    $scope.editPoids = function(index, i, j) {
+	var _poids = prompt("Poids :");
+	var tmp = $scope.ex[i][j].serie[index].split("x");
+	if(!isNaN(_poids))
+	    $scope.ex[i][j].serie[index] = tmp[0] + 'x' + _poids;
+	else
+	    alert("Veuillez rentrer un nombre.");
+    };
 })
 
 .controller('resumeCtrl', function($scope, $state, $stateParams) {

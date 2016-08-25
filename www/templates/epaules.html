@@ -5,13 +5,13 @@
       <ion-item style="" class="item item-divider">-- EPAULES --</ion-item>
       <div ng-repeat="ex in epaules">
 	<a class="item item-thumbnail-left" ng-click="modifyValue(ex.id)">
-	  <img src="img/avatar.jpg">
+	  <img ng-src="{{ ex.image }}" />
 	  <h2>{{ ex.exercice }}</h2>
-	  <p>{{ ex.repetition }} répétitions à {{ ex.poids }} kg</p>
+	  <p>{{ ex.repetition }} séries à {{ ex.poids }} kg</p>
 	</a>
 	<div style="background-color: white;" ng-show="ex.modification">
 	  <form ng-submit="changeValue(ex.id)">
-	    Répétitions : <input type="number" ng-model="ex.repetition"><br/>
+	    Séries : <input type="number" ng-model="ex.repetition"><br/>
 	    Poids (en kg) : <input type="number" ng-model="ex.poids"><br/>
 	    <input type="submit" value="Valider">
 	  </form>
