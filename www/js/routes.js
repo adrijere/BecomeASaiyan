@@ -87,7 +87,6 @@ angular.module('app.routes', [])
     controller: 'pectorauxCtrl'
   })
 
-
   .state('seance', {
   	url: '/seance/{ex}',
     cache: false,
@@ -108,6 +107,12 @@ angular.module('app.routes', [])
 	    },
   	    templateUrl: 'templates/resume.html',
   	    controller: 'resumeCtrl'
+  })
+
+  .state('createSeance', {
+    url: '/createSeance',
+    templateUrl: 'templates/createSeance.html',
+    controller: 'createSeanceCtrl'
   })
 
   $urlRouterProvider.otherwise('/page1/settings')

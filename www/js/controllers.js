@@ -53,24 +53,22 @@ angular.module('app.controllers', [])
     }
 })
 
-.controller('aProposDeNousCtrl', function($scope) {
-	
-})
+.controller('aProposDeNousCtrl', function($scope) {})
 
-    .controller('brasCtrl', function($scope) {
-	$scope.exercices = JSON.parse(localStorage.getItem("biceps"));
-	$scope.triceps = JSON.parse(localStorage.getItem("triceps"));
-	$scope.modifyValue = function(id) {
-		if (id < 6) {
-			$scope.exercices[id].modification = !$scope.exercices[id].modification;
-			localStorage.setItem("biceps", JSON.stringify($scope.exercices));
-		}
-		else
-		{
-			$scope.triceps[id - 6].modification = !$scope.triceps[id - 6].modification;	
-			localStorage.setItem("triceps", JSON.stringify($scope.triceps));
-		}
-	};
+.controller('brasCtrl', function($scope) {
+$scope.exercices = JSON.parse(localStorage.getItem("biceps"));
+$scope.triceps = JSON.parse(localStorage.getItem("triceps"));
+$scope.modifyValue = function(id) {
+	if (id < 6) {
+		$scope.exercices[id].modification = !$scope.exercices[id].modification;
+		localStorage.setItem("biceps", JSON.stringify($scope.exercices));
+	}
+	else {
+		$scope.triceps[id - 6].modification = !$scope.triceps[id - 6].modification;	
+		localStorage.setItem("triceps", JSON.stringify($scope.triceps));
+	}
+};
+
 	$scope.changeValue = function(id) {
 		if (id < 6) {
 			$scope.exercices[id].modification = !$scope.exercices[id].modification;
@@ -240,4 +238,15 @@ angular.module('app.controllers', [])
 
 .controller('resumeHistoriqueCtrl', function($scope, $state, $stateParams) {
 	$scope.exercices = $stateParams.ex;
+})
+
+.controller('createSeanceCtrl', function($scope) {
+	$scope.ShowGroupes = function(id) {
+		if(document.getElementById(id).style.display=="none"){
+			document.getElementById(id).style.display="block";
+		}
+		else{
+			document.getElementById(id).style.display="none";
+		}
+	};
 })

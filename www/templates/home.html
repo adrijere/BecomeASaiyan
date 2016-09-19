@@ -7,15 +7,13 @@
 	    <ion-item style="" class="item-thumbnail-left">
 	      <img src="img/avatar.jpg">
 	      <h2>{{ profile.prenom }}</h2>
-	      <p>{{ profile.poids }}kg -- {{ profile.taille }}</p>
+	      <p>{{ profile.poids }}kg </p>
+	      <p> {{ profile.taille }}</p>
 	    </ion-item>
 	    <label style="" class="item">
-	      <span class="input-label">Votre but :</span><span>{{ profile.but }}</span></label>
+	      <span class="input-label">Votre but :{{ profile.but }}</span></label>
 	    <label style="" class="item item-input">
 	      <span class="input-label">Objectif en kg</span><span>{{ profile.objectif }}</span>
-	    </label>
-	    <label style="" class="item item-input">
-	      <span class="input-label">Coup en € des compléments</span><span>{{ profile.cout }}</span>
 	    </label>
 	    <label style="" class="item item-input">
 	      <span class="input-label">KCalories journalieres</span><span>{{ profile.kcal }}</span>
