@@ -4,28 +4,33 @@
     <ion-list style="">
         <ion-item style="" class="item-thumbnail-left">
             <img src="img/avatar.jpg">
-            <h2><textarea ng-model="profile.prenom" name="prenom" placeholder="Prénom" id="prenom">{{ profile.prenom }}</textarea></h2>
-            <p><textarea ng-model="profile.poids" name="poids" placeholder="Poids" id="poids">{{ profile.poids }}</textarea>kg -- <textarea name="taille" placeholder="Taille" ng-model="profile.taille" id="taille">{{ profile.taille }}</textarea></p>
+            <h2>Prénom : <textarea ng-model="profile.prenom" name="prenom" placeholder="Prénom" id="prenom">{{ profile.prenom }}</textarea></h2>
+            <p><h2>Poids en Kg :<textarea ng-model="profile.poids" name="poids" placeholder="Poids" id="poids">{{ profile.poids }}</h2></textarea>
+            <h2>Taille :<textarea name="taille" placeholder="Taille" ng-model="profile.taille" id="taille">{{ profile.taille }}</textarea></h2></p>
         </ion-item>
     <label style="" class="item item-select">
-    <span class="input-label">Votre but :</span>
-    <select name="but" ng-model="profile.but" id ="but">
-        <option>Se muscler</option>
+    <span class="input-label">Votre objectif :</span>
+    <select name="but" ng-model="profile.but" id ="but" style="z-index:2">
+        <!-- ca marche pas lel -->
+        <option>Prendre de la masse</option>
+        <option>Prendre du muscle</option>
         <option>Perdre du poids</option>
+        <option>Maintenance</option>
+        <option>Autre</option>
     </select>
     </label>
     <label style="" class="item item-input">
         <span class="input-label">Objectif en kg</span><textarea ng-model="profile.objectif" placeholder="Objectif" name="objectif" id="objectif">{{ profile.objectif }}</textarea>
     </label>
     <label style="" class="item item-input">
-        <span class="input-label">Coup en €</span><textarea placeholder="Cout" name="cout" ng-model="profile.cout" id="cout">{{ profile.cout }}</textarea>
+        <span class="input-label">Nombre de repas journaliers :</span><textarea name="kcal" ng-model="profile.nbrepas" id="nbrepas">{{ profile.nbrepas }}</textarea>
     </label>
     <label style="" class="item item-input">
-        <span class="input-label">KCal journaliers</span><textarea placeholder="KCal" name="kcal" ng-model="profile.kcal" id="kcal">{{ profile.kcal }}</textarea>
+    <button  class=" button button-positive" id="GererComplement" ng-click="">Gérer mes compléments</button>
+    <!-- Ici il faudra faire une liste déroulante comme pour les groupes musculaires, je fournirais la liste des complémtents, on aura donc a partir de ça, de quoi calculer un cout moyen mensuel-->
     </label>
     </ion-list>
     <button class="button button-energized  button-block" style="color:#000000;" id="paramTres-button2" ng-click="saveProfile()">Sauvegarder mes paramètres</button>
-    <button class="button button-energized  button-block" style="color:#000000;" id="paramTres-button2">Gérer mes compléments</button>
 </div>
 </ion-content>
 </ion-view>

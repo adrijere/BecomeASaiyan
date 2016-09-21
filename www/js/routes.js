@@ -115,5 +115,11 @@ angular.module('app.routes', [])
     controller: 'createSeanceCtrl'
   })
 
+  .state('createSeance2', {
+    url: '/createSeance2',
+    templateUrl: 'templates/createSeance2.html',
+    controller: 'createSeanceCtrl'
+  })
+
   $urlRouterProvider.otherwise('/page1/settings')
 });
