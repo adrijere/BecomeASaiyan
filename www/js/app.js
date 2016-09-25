@@ -384,10 +384,11 @@ if (window.StatusBar) {
     "prenom": "Sangoku",
     "poids" : 80,
     "taille": "1m80",
-    "but": "Se muscler",
+    "but": "Prise de masse",
     "objectif": 85,
     "cout" : 0,
-    "kcal": 0
+    "kcal": 2500,
+    "nbrepas": 5
   };
 
   if(typeof(Storage) != "undefined") {
