@@ -33,23 +33,27 @@ angular.module('app.controllers', [])
     $scope.prot = 2.2 * ($scope.profile.poids);
 })
 
-.controller('chronomTreCtrl', function($scope) {
+.controller('chronomTreCtrl', function($scope, $timeout) {
     $scope.timermin = 1;
     $scope.timersec = 0;
-
-    $scope.start = function() {
-	setInterval(function(){
-	    if($scope.timersec == 00)
-	    {
-		$scope.timermin--;
-		if ($scope.timersec == 00 && $scope.timermin == -1){
-		    console.log("STOP");
-		    return (1); /* Le soucis vient surement d'ici pour le timer. je quitte la fonction mais pas le setInterval */
-		}
-		$scope.timersec = 60;
+    
+    $scope.onTimeout = function(){
+        if($scope.timersec == 00)
+	{
+	    $scope.timermin--;
+	    if ($scope.timermin == -1){
+		$scope.timermin = 0;
+		console.log("STOP");
+		return (1);
 	    }
-	    $scope.timersec--;
-	},1000);
+	    $scope.timersec = 60;
+	}
+	$scope.timersec--;
+        mytimeout = $timeout($scope.onTimeout,1000);
+    }
+    
+    $scope.start = function() {
+	$timeout($scope.onTimeout,1000);
     }
 })
 
