@@ -254,3 +254,57 @@ $scope.modifyValue = function(id) {
 		}
 	};
 })
+
+.controller('createSeanceCtrlPec', function($scope) {
+	$scope.ShowExos = function(id) {
+		if(document.getElementById(id).style.display=="none"){
+			document.getElementById(id).style.display="block";
+		}
+		else{
+			document.getElementById(id).style.display="none";
+		}
+	};})
+
+.controller('GrandDorsaux', function($scope) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Rombhoides', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Trapezes', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Biceps', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Triceps', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('AvantBras', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Deltoides', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Quadriceps', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Ischios', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Mollets', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})
+
+.controller('Abominaux', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.ex;
+})

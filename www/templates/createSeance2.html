@@ -99,11 +99,82 @@
 		Flexions latérales
 		Gainage planche
 
-		- -FULL BODY
-
-		ALL
-
-	    -->
+		- -FULL BODY-->
+	<ion-list>
+	<!--PECTORAUX-->
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeCouche">		Développé couché</ion-checkbox>
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeCoucheHaltere">		Développé couché haltère</ion-checkbox>
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeIncline">		Développé incliné </ion-checkbox>
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeInclineHaltere">		Développé incliné haltère</ion-checkbox>ng-click="ng-click="ShowGroupes('showpectoraux');" "
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeDecline">		Développé décliné</ion-checkbox>
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeDeclineHaltere">		Développé décliné haltère</ion-checkbox>ng-click="ng-click="ShowGroupes('showpectoraux');" "
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeEcarteCouche">		Développé écarté couché</ion-checkbox>
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeEcarteIncline">		Développé écarté inclincé</ion-checkbox>ng-click="ng-click="ShowGroupes('showpectoraux');" "
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeEcartePoulie">		Développé écarté poulie</ion-checkbox>
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="PeckDeck">		Pec deck</ion-checkbox>
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="Dips">		Dips</ion-checkbox>
+	<ion-checkbox ng-click="ng-click="ShowExos('showpectoraux');" "id="Pectoraux" ng-model="DeveloppeAssisMachine">		Développé assis machine</ion-checkbox>
+	<!--GRAND DORSAUX-->
+	<ion-checkbox ng-model="GrandDorsaux">		Traction barre</ion-checkbox>
+	<ion-checkbox ng-model="GrandDorsaux">		Tirage nuque</ion-checkbox>
+	<ion-checkbox ng-model="GrandDorsaux">		Tirage poitrine</ion-checkbox>
+	<ion-checkbox ng-model="GrandDorsaux">		Tirage prise serrée</ion-checkbox>
+	<ion-checkbox ng-model="GrandDorsaux">		Pull over</ion-checkbox>
+	<!--ROMBHOIDES-->
+	<ion-checkbox ng-model="Rombhoides">		Soulevé de terre</ion-checkbox>
+	<ion-checkbox ng-model="Rombhoides">		Tirage poulie basse</ion-checkbox>
+	<ion-checkbox ng-model="Rombhoides">		Rowing supination</ion-checkbox>
+	<ion-checkbox ng-model="Rombhoides">		Rowing T barre</ion-checkbox>
+	<!--TRAPEZES-->
+	<ion-checkbox ng-model="Trapezes">		shrug haltere</ion-checkbox>
+	<ion-checkbox ng-model="Trapezes">		shrug barre</ion-checkbox>
+	<!--BICEPS-->
+	<ion-checkbox ng-model="Biceps">		Curl barre</ion-checkbox>
+	<ion-checkbox ng-model="Biceps">		Curl haltere</ion-checkbox>
+	<ion-checkbox ng-model="Biceps">		Curl marteau</ion-checkbox>
+	<ion-checkbox ng-model="Biceps">		Curl pupitre</ion-checkbox>
+	<ion-checkbox ng-model="Biceps">		Curl concentration</ion-checkbox>
+	<!--TRICEPS-->
+	<ion-checkbox ng-model="Triceps">		Developpé couché prise serré</ion-checkbox>
+	<ion-checkbox ng-model="Triceps">		Barre au front</ion-checkbox>
+	<ion-checkbox ng-model="Triceps">		Dips</ion-checkbox>
+	<ion-checkbox ng-model="Triceps">		Tirage poulie haute corde</ion-checkbox>
+	<ion-checkbox ng-model="Triceps">		Tirage poulie haute barre</ion-checkbox>
+	<ion-checkbox ng-model="Triceps">		Tirage poulie haute barre supination</ion-checkbox>
+	<ion-checkbox ng-model="Triceps">		kick back</ion-checkbox>
+	<!--AVANTBRAS-->
+	<ion-checkbox ng-model="AvantBras">		Curl pronation</ion-checkbox>
+	<!--DELTOIDES-->
+	<ion-checkbox ng-model="Deltoides">		Elevations laterales</ion-checkbox>
+	<ion-checkbox ng-model="Deltoides">		Elevations frontales</ion-checkbox>
+	<ion-checkbox ng-model="Deltoides">		Elevations arrieres</ion-checkbox>
+	<ion-checkbox ng-model="Deltoides">		Développé militaire</ion-checkbox>
+	<ion-checkbox ng-model="Deltoides">		Développé militaire</ion-checkbox>
+	<!--JAMBES-->
+	<!--QUADRICEPS-->
+	<ion-checkbox ng-model="Quadriceps">		Squat</ion-checkbox>
+	<ion-checkbox ng-model="Quadriceps">		Presse</ion-checkbox>
+	<ion-checkbox ng-model="Quadriceps">		Front Squat</ion-checkbox>
+	<ion-checkbox ng-model="Quadriceps">		Hack Squat</ion-checkbox>
+	<ion-checkbox ng-model="Quadriceps">		Fentes</ion-checkbox>
+	<ion-checkbox ng-model="Quadriceps">		Leg extention</ion-checkbox>
+	<!--ISCHIOS-->
+	<ion-checkbox ng-model="Ischios">		Soulevé de terre jambes tendues</ion-checkbox>
+	<ion-checkbox ng-model="Ischios">		Leg curl assis</ion-checkbox>
+	<ion-checkbox ng-model="Ischios">		Leg curl couché</ion-checkbox>
+	<ion-checkbox ng-model="Ischios">		Leg curl debout</ion-checkbox>
+	<!--MOLLETS-->
+	<ion-checkbox ng-model="Mollets">		Mollets debout</ion-checkbox>
+	<ion-checkbox ng-model="Mollets">		Mollets assis</ion-checkbox>
+	<ion-checkbox ng-model="Mollets">		Mollets presse</ion-checkbox>
+	<!-- ABDOMINAUX-->
+	<ion-checkbox ng-model="Abominaux">		Crunch</ion-checkbox>
+	<ion-checkbox ng-model="Abominaux">		Relevé de jambes</ion-checkbox>
+	<ion-checkbox ng-model="Abominaux">		Crunch rotation</ion-checkbox>
+	<ion-checkbox ng-model="Abominaux">		Flexions latérales</ion-checkbox>
+	<ion-checkbox ng-model="Abominaux">		Gainage planche</ion-checkbox>
+	<!--- -FULL BODY-->
+	</ion-list>
 	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="validerCreateSeance">Valider</button>
 	</div>
 	</ion-content>
