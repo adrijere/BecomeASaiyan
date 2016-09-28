@@ -3,32 +3,26 @@
 	<div ng-controller="createSeanceCtrl">
 	   <p> Quels groupes musculaires souhaitez-vous travailler ? </p>
 		<ion-list>
-			 <ion-checkbox ng-model="Pectoraux">Pectoraux</ion-checkbox>
-
- 			 <ion-checkbox ng-model="Dos" ng-click="ShowGroupes('showdos');">Dos</ion-checkbox>
- 			 <div id="showdos"style="padding-left:20px; display:none;">
- 				 <ion-checkbox ng-model="Grandsdorsaux">Grands dorsaux</ion-checkbox>
- 				 <ion-checkbox ng-model="Rhomboides">Rhomboïdes</ion-checkbox>			
- 				 <ion-checkbox ng-model="Trapezes">Trapèzes</ion-checkbox>
+			 <ion-checkbox ng-click="add_exos('Pectoraux');">Pectoraux</ion-checkbox>
+ 			 <ion-checkbox ng-click="ShowGroupes('showdos');">Dos</ion-checkbox>
+ 			 <div id="showdos" style="padding-left:20px; display:none;">
+ 				 <ion-checkbox ng-click="add_exos('Grandsdorsaux');">Grands dorsaux</ion-checkbox>
+ 				 <ion-checkbox ng-click="add_exos('Rhomboides');">Rhomboïdes</ion-checkbox>
+ 				 <ion-checkbox ng-click="add_exos('Trapezes');">Trapèzes</ion-checkbox>
  			 </div>
-
-			 <ion-checkbox ng-model="Biceps">Biceps</ion-checkbox>
-
- 			 <ion-checkbox ng-model="Triceps">Triceps</ion-checkbox>
-
- 			 <ion-checkbox ng-model="Avantbras">Avant-bras</ion-checkbox>
-
- 			 <ion-checkbox ng-model="Deltoides">Deltoides</ion-checkbox>
-
- 			 <ion-checkbox ng-model="Jambes" ng-click="ShowGroupes('showjambes');">Jambes</ion-checkbox>
+			 <ion-checkbox ng-click="add_exos('Biceps');">Biceps</ion-checkbox>
+ 			 <ion-checkbox ng-click="add_exos('Triceps');">Triceps</ion-checkbox>
+ 			 <ion-checkbox ng-click="add_exos('Avantbras');">Avant-bras</ion-checkbox>
+ 			 <ion-checkbox ng-click="add_exos('Deltoides');">Deltoides</ion-checkbox>
+ 			 <ion-checkbox ng-click="ShowGroupes('showjambes');">Jambes</ion-checkbox>
  			 <div id="showjambes"style="padding-left:20px; display:none;">
-				 <ion-checkbox ng-model="Quadriceps">Quadriceps</ion-checkbox>
- 				 <ion-checkbox ng-model="Ischios">Ischios</ion-checkbox>
- 				 <ion-checkbox ng-model="Mollets">Mollets</ion-checkbox>
+				 <ion-checkbox ng-click="add_exos('Quadriceps');">Quadriceps</ion-checkbox>
+ 				 <ion-checkbox ng-click="add_exos('Ischios');">Ischios</ion-checkbox>
+ 				 <ion-checkbox ng-click="add_exos('Mollets');">Mollets</ion-checkbox>
  			 </div>
 
- 			 <ion-checkbox ng-model="Abdominaux">Abdominaux</ion-checkbox>
-  			 <ion-checkbox ng-model="Fullbody">Fullbody</ion-checkbox>
+ 			 <ion-checkbox ng-click="add_exos('Abdominaux');">Abdominaux</ion-checkbox>
+  			 <ion-checkbox ng-click="add_exos('Fullbody');">Fullbody</ion-checkbox>
 	  	</ion-list>
 	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="createSeance2">Suite</button>
 	</div>
