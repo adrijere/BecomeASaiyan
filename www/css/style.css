@@ -32,3 +32,18 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+@font-face {
+  font-family: "Saiyan";
+  src: url(/../polices/Saiyan-Sans.ttf) 
+  format("truetype");
+}
+
+.saiyan {
+    text-align: center;
+    font-family: "Saiyan";
+    font-size: 400%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
