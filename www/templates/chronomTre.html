@@ -2,9 +2,20 @@
   <ion-content class="has-header" padding="true">
     <div ng-controller="chronomTreCtrl">
       <h2 style="text-align: center;" id="timer">{{timermin}} : {{timersec}}</h2>
-      <button ng-click="start()">Start</button>
-      <button ng-click="stop()">Stop</button>
-      <button ng-click="reset()">Reset</button>
+      <div class="button-bar">
+      <button ng-click="start()" id="start" class="button button-energized">Start</button>
+      <button ng-click="stop()" id="stop" class="button button-energized">Stop</button>
+      <button ng-click="reset()" id="reset" class="button button-energized">Reset</button>
       </div>
+
+<div class="button-bar">
+      <button ng-click="params()" id="params" class="button button-energized button-full">Paramètres</button>
+</div>
+
+<div class="button-bar">
+      <button ng-click="hiitMode()" id="hiit" class="button button-assertive button-full">HIIT</button>
+</div>
+
+    </div>
   </ion-content>
 </ion-view>

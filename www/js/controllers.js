@@ -36,7 +36,8 @@ angular.module('app.controllers', [])
 .controller('chronomTreCtrl', function($scope, $timeout) {
     $scope.timermin = 1;
     $scope.timersec = 0;
-    
+    var timer;
+
     $scope.onTimeout = function(){
         if($scope.timersec == 00)
 	{
@@ -49,12 +50,44 @@ angular.module('app.controllers', [])
 	    $scope.timersec = 60;
 	}
 	$scope.timersec--;
-        mytimeout = $timeout($scope.onTimeout,1000);
+        timer = $timeout($scope.onTimeout,1000);
     }
     
     $scope.start = function() {
-	$timeout($scope.onTimeout,1000);
+	document.getElementById("start").disabled = true;
+	document.getElementById("stop").disabled = false;
+	timer = $timeout($scope.onTimeout,1000);
     }
+
+    $scope.stop = function() {
+	document.getElementById("start").disabled = false;
+	$timeout.cancel(timer);
+    }
+
+    $scope.reset = function() {
+	document.getElementById("start").disabled = false;
+	document.getElementById("stop").disabled = true;
+	$scope.timermin = 1;
+	$scope.timersec = 0;
+	$timeout.cancel(timer);
+    }
+
+    $scope.params = function() {
+	var _min = prompt("Minute(s) :");
+	if (!isNaN(_min) && _min >= 0)
+	    $scope.timermin = _min;
+	else
+	    alert("Veuillez rentrer un nombre de minutes.");
+	var _sec = prompt("Seconde(s) :");
+	if (!isNaN(_sec) && _sec >= 0)
+	    $scope.timersec = _sec;
+	else
+	    alert("Veuillez rentrer un nombre de secondes.");	
+    }
+
+    $scope.hiitMode = function() {
+    }
+
 })
 
 .controller('aProposDeNousCtrl', function($scope) {})
