@@ -78,7 +78,7 @@ $scope.modifyValue = function(id) {
 			$scope.exercices[id].modification = !$scope.exercices[id].modification;
 			$scope.exercices[id].serie = new Array($scope.exercices[id].repetition);
 			for (var i = 0; i < $scope.exercices[id].serie.length; i++) {
-				$scope.exercices[id].serie[i] = "10x" + $scope.exercices[id].poids;
+				$scope.exercices[id].serie[i] = "10@" + $scope.exercices[id].poids + "kg";
 			}
 			localStorage.setItem("biceps", JSON.stringify($scope.exercices));
 		}
@@ -86,7 +86,7 @@ $scope.modifyValue = function(id) {
 			$scope.triceps[id - 6].modification = !$scope.triceps[id - 6].modification;
 			$scope.triceps[id - 6].serie = new Array($scope.triceps[id - 6].repetition);
 			for (var i = 0; i < $scope.triceps[id - 6].serie.length; i++) {
-				$scope.triceps[id - 6].serie[i] = "10x" + $scope.triceps[id - 6].poids;
+				$scope.triceps[id - 6].serie[i] = "10@" + $scope.triceps[id - 6].poids + "kg";
 			}
 			localStorage.setItem("triceps", JSON.stringify($scope.triceps));
 		}
@@ -103,7 +103,7 @@ $scope.modifyValue = function(id) {
 			$scope.dos[id].modification = !$scope.dos[id].modification;
 			$scope.dos[id].serie = new Array($scope.dos[id].repetition);
 			for (var i = 0; i < $scope.dos[id].serie.length; i++) {
-				$scope.dos[id].serie[i] = "10x" + $scope.dos[id].poids;
+				$scope.dos[id].serie[i] = "10@" + $scope.dos[id].poids + "kg";
 			}
 			localStorage.setItem("dos", JSON.stringify($scope.dos));
 	};
@@ -119,7 +119,7 @@ $scope.modifyValue = function(id) {
 			$scope.jambes[id].modification = !$scope.jambes[id].modification;
 			$scope.jambes[id].serie = new Array($scope.jambes[id].repetition);
 			for (var i = 0; i < $scope.jambes[id].serie.length; i++) {
-				$scope.jambes[id].serie[i] = "10x" + $scope.jambes[id].poids;
+				$scope.jambes[id].serie[i] = "10@" + $scope.jambes[id].poids + "kg";
 			}
 			localStorage.setItem("jambes", JSON.stringify($scope.jambes));
 	};
@@ -135,7 +135,7 @@ $scope.modifyValue = function(id) {
 			$scope.epaules[id].modification = !$scope.epaules[id].modification;
 			$scope.epaules[id].serie = new Array($scope.epaules[id].repetition);
 			for (var i = 0; i < $scope.epaules[id].serie.length; i++) {
-				$scope.epaules[id].serie[i] = "10x" + $scope.epaules[id].poids;
+				$scope.epaules[id].serie[i] = "10@" + $scope.epaules[id].poids + "kg";
 			}
 			localStorage.setItem("epaules", JSON.stringify($scope.epaules));
 	};
@@ -151,7 +151,7 @@ $scope.modifyValue = function(id) {
 			$scope.pectoraux[id].modification = !$scope.pectoraux[id].modification;
 			$scope.pectoraux[id].serie = new Array($scope.pectoraux[id].repetition);
 			for (var i = 0; i < $scope.pectoraux[id].serie.length; i++) {
-				$scope.pectoraux[id].serie[i] = "10x" + $scope.pectoraux[id].poids;
+				$scope.pectoraux[id].serie[i] = "10@" + $scope.pectoraux[id].poids + "kg";
 			}
 			localStorage.setItem("pectoraux", JSON.stringify($scope.pectoraux));
 	};
@@ -198,17 +198,17 @@ $scope.modifyValue = function(id) {
 	};
     $scope.editRep = function(index, i, j) {
 	var _rep = prompt("Nombre de répétitions :");
-	var tmp = $scope.ex[i][j].serie[index].split("x");
+	var tmp = $scope.ex[i][j].serie[index].split("@");
 	if (!isNaN(_rep))
-	    $scope.ex[i][j].serie[index] = _rep + 'x' + tmp[1];
+	    $scope.ex[i][j].serie[index] = _rep + '@' + tmp[1];
 	else
 	    alert("Veuillez rentrer un nombre.");
     };
     $scope.editPoids = function(index, i, j) {
 	var _poids = prompt("Poids :");
-	var tmp = $scope.ex[i][j].serie[index].split("x");
+	var tmp = $scope.ex[i][j].serie[index].split("@");
 	if(!isNaN(_poids))
-	    $scope.ex[i][j].serie[index] = tmp[0] + 'x' + _poids;
+	    $scope.ex[i][j].serie[index] = tmp[0] + '@' + _poids + "kg";
 	else
 	    alert("Veuillez rentrer un nombre.");
     };
@@ -252,7 +252,6 @@ $scope.modifyValue = function(id) {
 	    $scope.exercices.push(name);
 	else
 	    $scope.exercices.splice($scope.exercices.indexOf(name), 1);
-	alert($scope.exercices);
     }
     
     $scope.ShowGroupes = function(id) {
@@ -263,16 +262,16 @@ $scope.modifyValue = function(id) {
 	    document.getElementById(id).style.display="none";
 	}
     };
-    
-    $scope.ShowExos = function(name) {
-	if ($scope.exercices.indexOf(1)=="Pectoraux") {
-	    if (document.getElementsByClassName(id).style.display=="none"){
-		document.getElementsByClassName(id).style.display="block";
-	    }
-	    else {
-		document.getElementsByClassName(id).style.display="none";
-	    }
+})
+
+.controller('createSeance2Ctrl', function($scope, $state, $stateParams) {
+    $scope.exercices = $stateParams.exercices;
+    console.log("Exos: " + $scope.exercices);
+    for (var i = 0; i < $scope.exercices.length; i++) {
+	console.log($scope.exercices[i]);
+	var tmp = document.getElementsByClassName($scope.exercices[i]);
+	for (j = 0; j < tmp.length; j++) {
+	    tmp[j].style.display = "block";
 	}
     }
 })
-

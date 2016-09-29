@@ -111,14 +111,19 @@ angular.module('app.routes', [])
 
   .state('createSeance', {
     url: '/createSeance',
+    cache: false,
     templateUrl: 'templates/createSeance.html',
     controller: 'createSeanceCtrl'
   })
 
   .state('createSeance2', {
     url: '/createSeance2',
+    cache: false,
+      params: {
+      exercices: { array:true },
+  },
     templateUrl: 'templates/createSeance2.html',
-    controller: 'createSeanceCtrl'
+    controller: 'createSeance2Ctrl'
   })
 
   $urlRouterProvider.otherwise('/page1/settings')
