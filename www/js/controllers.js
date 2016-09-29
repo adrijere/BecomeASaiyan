@@ -264,9 +264,8 @@ $scope.modifyValue = function(id) {
 	}
     };
     
-    
-    $scope.ShowExos = function(id) {
-	if (id == "showpectoraux") {
+    $scope.ShowExos = function(name) {
+	if ($scope.exercices.indexOf(1)=="Pectoraux") {
 	    if (document.getElementsByClassName(id).style.display=="none"){
 		document.getElementsByClassName(id).style.display="block";
 	    }
