@@ -308,3 +308,7 @@ $scope.modifyValue = function(id) {
 	}
     }
 })
+
+.controller('createSeance3Ctrl', function($scope) {
+
+})

@@ -126,5 +126,15 @@ angular.module('app.routes', [])
     controller: 'createSeance2Ctrl'
   })
 
+   .state('createSeance3', {
+    url: '/createSeance3',
+    cache: false,
+      params: {
+      exercices: { array:true },
+  },
+    templateUrl: 'templates/createSeance3.html',
+    controller: 'createSeance3Ctrl'
+  })
+
   $urlRouterProvider.otherwise('/page1/settings')
 });
