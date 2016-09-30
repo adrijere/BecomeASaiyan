@@ -297,18 +297,27 @@ $scope.modifyValue = function(id) {
     };
 })
 
-.controller('createSeance2Ctrl', function($scope, $state, $stateParams) {
-    $scope.exercices = $stateParams.exercices;
-    console.log("Exos: " + $scope.exercices);
-    for (var i = 0; i < $scope.exercices.length; i++) {
-	console.log($scope.exercices[i]);
-	var tmp = document.getElementsByClassName($scope.exercices[i]);
-	for (j = 0; j < tmp.length; j++) {
-	    tmp[j].style.display = "block";
+    .controller('createSeance2Ctrl', function($scope, $state, $stateParams) {
+	$scope.exercices = $stateParams.exercices;
+	$scope.exos = [];
+	console.log("Exos: " + $scope.exercices);
+	for (var i = 0; i < $scope.exercices.length; i++) {
+	    console.log($scope.exercices[i]);
+	    var tmp = document.getElementsByClassName($scope.exercices[i]);
+	    for (j = 0; j < tmp.length; j++) {
+		tmp[j].style.display = "block";
+	    }
 	}
-    }
-})
+	
+	$scope.add_exos = function(name) {
+	    if ($scope.exos.indexOf(name) == -1)
+		$scope.exos.push(name);
+	    else
+		$scope.exos.splice($scope.exos.indexOf(name), 1);
+	}
+    })
 
-.controller('createSeance3Ctrl', function($scope) {
-
-})
+    .controller('createSeance3Ctrl', function($scope, $state, $stateParams) {
+	$scope.exos = $stateParams.exos;
+	console.log("Exos : " + $scope.exos);
+    })

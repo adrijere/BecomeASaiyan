@@ -130,7 +130,7 @@ angular.module('app.routes', [])
     url: '/createSeance3',
     cache: false,
       params: {
-      exercices: { array:true },
+      exos: { array:true },
   },
     templateUrl: 'templates/createSeance3.html',
     controller: 'createSeance3Ctrl'

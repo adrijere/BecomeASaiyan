@@ -102,18 +102,18 @@
 		- -FULL BODY-->
 	<ion-list>
 	<!--PECTORAUX-->
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé couché</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé couché haltère</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé incliné </ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé incliné haltère</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé décliné</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé décliné haltère</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé écarté couché</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé écarté inclincé</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé écarté poulie</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Pec deck</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Dips</ion-checkbox>
-	<ion-checkbox ng-click="ShowExos('showpectoraux');" class="Pectoraux" style="display:none;">		Développé assis machine</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé couché');" class="Pectoraux" style="display:none;">		Développé couché</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé couché haltère');" class="Pectoraux" style="display:none;">		Développé couché haltère</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé incliné');" class="Pectoraux" style="display:none;">		Développé incliné </ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé incliné halètre');" class="Pectoraux" style="display:none;">		Développé incliné haltère</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Dévéloppé décliné');" class="Pectoraux" style="display:none;">		Développé décliné</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé décliné haltère');" class="Pectoraux" style="display:none;">		Développé décliné haltère</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé écarté couché');" class="Pectoraux" style="display:none;">		Développé écarté couché</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé écarté incliné');" class="Pectoraux" style="display:none;">		Développé écarté incliné</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé écarté poulie');" class="Pectoraux" style="display:none;">		Développé écarté poulie</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Pec deck');" class="Pectoraux" style="display:none;">		Pec deck</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Dips');" class="Pectoraux" style="display:none;">		Dips</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé assis machine');" class="Pectoraux" style="display:none;">		Développé assis machine</ion-checkbox>
 	<!--GRAND DORSAUX-->
 	<ion-checkbox class="Grandsdorsaux" style="display:none;">		Traction barre</ion-checkbox>
 	<ion-checkbox class="Grandsdorsaux" style="display:none;">		Tirage nuque</ion-checkbox>
@@ -175,7 +175,7 @@
 	<ion-checkbox class="Abdominaux" style="display:none;">		Gainage planche</ion-checkbox>
 	<!--- -FULL BODY-->
 	</ion-list>
-	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="createSeance3({})" style="display:none;">Suite</button>
+	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="createSeance3({exos: exos})" style="display:none;">Suite</button>
 	</div>
 	</ion-content>
 </ion-view>
