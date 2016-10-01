@@ -1,105 +1,7 @@
 <ion-view style="background-color: rgb(247, 151, 94);" id="createSeance" title="Nouvelle Séance">
 	<ion-content class="has-header" padding="true">
 	<div ng-controller="createSeance2Ctrl">
-	   <p> De quels exercices se compose votre séance ? </p>
-	   <!--
-	   - -PECTORAUX
-
-		Développé couché
-		Développé couché haltère
-		Développé incliné 
-		Développé incliné haltère
-		Développé décliné
-		Développé décliné haltère
-		Développé écarté couché
-		Développé écarté inclincé
-		Développé écarté poulie
-		Pec deck
-		Dips
-		Développé assis machine
-
-		- -DOS
-
-		-GRAND DORSAUX 
-		Traction barre
-		Tirage nuque
-		Tirage poitrine
-		Tirage prise serrée
-		Pull over
-
-		 -ROMBHOIDES
-		Soulevé de terre
-		Tirage poulie basse
-		Rowing supination
-		Rowing T barre
-
-		-TRAPEZES
-		shrug haltere
-		shrug barre
-
-		- -BICEPS
-
-		Curl barre
-		Curl haltere
-		Curl marteau
-		Curl pupitre
-		Curl concentration
-
-		- -TRICEPS
-		
-		Developpé couché prise serré
-		Barre au front
-		Dips
-		Tirage poulie haute corde
-		Tirage poulie haute barre
-		Tirage poulie haute barre supination
-		kick back
-
-		- -AVANTBRAS
-
-		Curl pronation
-
-		- - DELTOIDES 
-
-		Elevations laterales
-		Elevations frontales
-		Elevations arrieres
-		Développé militaire
-		Développé militaire
-
-		- - JAMBES 
-
-		-QUADRICEPS
-
-		Squat
-		Presse
-		Front Squat
-		Hack Squat
-		Fentes
-		Leg extention
-
-		-ISCHIOS
-
-		Soulevé de terre jambes tendues
-		Leg curl assis
-		Leg curl couché
-		Leg curl debout
-
-		-MOLLETS
-
-		Mollets debout
-		Mollets assis
-		Mollets presse
-
-		- - ABDOMINAUX
-
-		Crunch
-		Relevé de jambes
-		Crunch rotation
-		Flexions latérales
-		Gainage planche
-
-		- -FULL BODY-->
+	<p> De quels exercices se compose votre séance ? </p>
 	<ion-list>
 	<!--PECTORAUX-->
 	<ion-checkbox ng-click="add_exos('Développé couché');" class="Pectoraux" style="display:none;">		Développé couché</ion-checkbox>
@@ -115,64 +17,64 @@
 	<ion-checkbox ng-click="add_exos('Dips');" class="Pectoraux" style="display:none;">		Dips</ion-checkbox>
 	<ion-checkbox ng-click="add_exos('Développé assis machine');" class="Pectoraux" style="display:none;">		Développé assis machine</ion-checkbox>
 	<!--GRAND DORSAUX-->
-	<ion-checkbox class="Grandsdorsaux" style="display:none;">		Traction barre</ion-checkbox>
-	<ion-checkbox class="Grandsdorsaux" style="display:none;">		Tirage nuque</ion-checkbox>
-	<ion-checkbox class="Grandsdorsaux" style="display:none;">		Tirage poitrine</ion-checkbox>
-	<ion-checkbox class="Grandsdorsaux" style="display:none;">		Tirage prise serrée</ion-checkbox>
-	<ion-checkbox class="Grandsdorsaux" style="display:none;">		Pull over</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Traction barre');" class="Grandsdorsaux" style="display:none;">		Traction barre</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Tirage nuque');" class="Grandsdorsaux" style="display:none;">		Tirage nuque</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Tirage poitrine');" class="Grandsdorsaux" style="display:none;">		Tirage poitrine</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Tirage prise serrée');" class="Grandsdorsaux" style="display:none;">		Tirage prise serrée</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Pull over');" class="Grandsdorsaux" style="display:none;">		Pull over</ion-checkbox>
 	<!--ROMBHOIDES-->
-	<ion-checkbox class="Rhomboides" style="display:none;">		Soulevé de terre</ion-checkbox>
-	<ion-checkbox class="Rhomboides" style="display:none;">		Tirage poulie basse</ion-checkbox>
-	<ion-checkbox class="Rhomboides" style="display:none;">		Rowing supination</ion-checkbox>
-	<ion-checkbox class="Rhomboides" style="display:none;">		Rowing T barre</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Soulevé de terre');" class="Rhomboides" style="display:none;">		Soulevé de terre</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Tirage poulie basse');" class="Rhomboides" style="display:none;">		Tirage poulie basse</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Rowing supination');" class="Rhomboides" style="display:none;">		Rowing supination</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Rowing T barre');" class="Rhomboides" style="display:none;">		Rowing T barre</ion-checkbox>
 	<!--TRAPEZES-->
-	<ion-checkbox class="Trapezes" style="display:none;">		Shrug haltères</ion-checkbox>
-	<ion-checkbox class="Trapezes" style="display:none;">		Shrug barre</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Shrug haltères');" class="Trapezes" style="display:none;">		Shrug haltères</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Shrug barre');" class="Trapezes" style="display:none;">		Shrug barre</ion-checkbox>
 	<!--BICEPS-->
-	<ion-checkbox class="Biceps" style="display:none;">		Curl barre</ion-checkbox>
-	<ion-checkbox class="Biceps" style="display:none;">		Curl haltere</ion-checkbox>
-	<ion-checkbox class="Biceps" style="display:none;">		Curl marteau</ion-checkbox>
-	<ion-checkbox class="Biceps" style="display:none;">		Curl pupitre</ion-checkbox>
-	<ion-checkbox class="Biceps" style="display:none;">		Curl concentration</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Curl barre');" class="Biceps" style="display:none;">		Curl barre</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Curl haltères');" class="Biceps" style="display:none;">		Curl haltères</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Curl marteau');" class="Biceps" style="display:none;">		Curl marteau</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Curl pupitre');" class="Biceps" style="display:none;">		Curl pupitre</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Curl concentration');" class="Biceps" style="display:none;">		Curl concentration</ion-checkbox>
 	<!--TRICEPS-->
-	<ion-checkbox class="Triceps" style="display:none;">		Developpé couché prise serré</ion-checkbox>
-	<ion-checkbox class="Triceps" style="display:none;">		Barre au front</ion-checkbox>
-	<ion-checkbox class="Triceps" style="display:none;">		Dips</ion-checkbox>
-	<ion-checkbox class="Triceps" style="display:none;">		Tirage poulie haute corde</ion-checkbox>
-	<ion-checkbox class="Triceps" style="display:none;">		Tirage poulie haute barre</ion-checkbox>
-	<ion-checkbox class="Triceps" style="display:none;">		Tirage poulie haute barre supination</ion-checkbox>
-	<ion-checkbox class="Triceps" style="display:none;">		Kick back</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé couché prise serrée');" class="Triceps" style="display:none;">		Développé couché prise serrée</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Barre au front');" class="Triceps" style="display:none;">		Barre au front</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Dips');" class="Triceps" style="display:none;">		Dips</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Tirage poulie haute corde');" class="Triceps" style="display:none;">		Tirage poulie haute corde</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Tirage poulie haute barre');" class="Triceps" style="display:none;">		Tirage poulie haute barre</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Tirage poulie haute barre supination');" class="Triceps" style="display:none;">		Tirage poulie haute barre supination</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Kick back');" class="Triceps" style="display:none;">		Kick back</ion-checkbox>
 	<!--AVANTBRAS-->
-	<ion-checkbox class="Avantbras" style="display:none;">		Curl pronation</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Curl pronation');" class="Avantbras" style="display:none;">		Curl pronation</ion-checkbox>
 	<!--DELTOIDES-->
-	<ion-checkbox class="Deltoides" style="display:none;">		Elevations laterales</ion-checkbox>
-	<ion-checkbox class="Deltoides" style="display:none;">		Elevations frontales</ion-checkbox>
-	<ion-checkbox class="Deltoides" style="display:none;">		Elevations arrieres</ion-checkbox>
-	<ion-checkbox class="Deltoides" style="display:none;">		Développé militaire</ion-checkbox>
-	<ion-checkbox class="Deltoides" style="display:none;">		Développé militaire</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Elevations latérales');" class="Deltoides" style="display:none;">		Elevations latérales</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Elevations frontales');" class="Deltoides" style="display:none;">		Elevations frontales</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Elevations arrières');" class="Deltoides" style="display:none;">		Elevations arrières</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé militaire haltères');" class="Deltoides" style="display:none;">		Développé militaire haltères</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Développé militaire barre');" class="Deltoides" style="display:none;">		Développé militaire barre</ion-checkbox>
 	<!--JAMBES-->
 	<!--QUADRICEPS-->
-	<ion-checkbox class="Quadriceps" style="display:none;">		Squat</ion-checkbox>
-	<ion-checkbox class="Quadriceps" style="display:none;">		Presse</ion-checkbox>
-	<ion-checkbox class="Quadriceps" style="display:none;">		Front Squat</ion-checkbox>
-	<ion-checkbox class="Quadriceps" style="display:none;">		Hack Squat</ion-checkbox>
-	<ion-checkbox class="Quadriceps" style="display:none;">		Fentes</ion-checkbox>
-	<ion-checkbox class="Quadriceps" style="display:none;">		Leg extention</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Squat');" class="Quadriceps" style="display:none;">		Squat</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Presse');" class="Quadriceps" style="display:none;">		Presse</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Front Squat');" class="Quadriceps" style="display:none;">		Front Squat</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Hack Squat');" class="Quadriceps" style="display:none;">		Hack Squat</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Fentes');" class="Quadriceps" style="display:none;">		Fentes</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Leg extension');" class="Quadriceps" style="display:none;">		Leg extension</ion-checkbox>
 	<!--ISCHIOS-->
-	<ion-checkbox class="Ischios" style="display:none;">		Soulevé de terre jambes tendues</ion-checkbox>
-	<ion-checkbox class="Ischios" style="display:none;">		Leg curl assis</ion-checkbox>
-	<ion-checkbox class="Ischios" style="display:none;">		Leg curl couché</ion-checkbox>
-	<ion-checkbox class="Ischios" style="display:none;">		Leg curl debout</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Soulevé de terre jambes tendues');" class="Ischios" style="display:none;">		Soulevé de terre jambes tendues</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Leg curl assis');" class="Ischios" style="display:none;">		Leg curl assis</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Leg curl couché');" class="Ischios" style="display:none;">		Leg curl couché</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Leg curl debout');" class="Ischios" style="display:none;">		Leg curl debout</ion-checkbox>
 	<!--MOLLETS-->
-	<ion-checkbox class="Mollets" style="display:none;">		Mollets debout</ion-checkbox>
-	<ion-checkbox class="Mollets" style="display:none;">		Mollets assis</ion-checkbox>
-	<ion-checkbox class="Mollets" style="display:none;">		Mollets presse</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Mollets debout');" class="Mollets" style="display:none;">		Mollets debout</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Mollets assis');" class="Mollets" style="display:none;">		Mollets assis</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Mollets presse');" class="Mollets" style="display:none;">		Mollets presse</ion-checkbox>
 	<!-- ABDOMINAUX-->
-	<ion-checkbox class="Abdominaux" style="display:none;">		Crunch</ion-checkbox>
-	<ion-checkbox class="Abdominaux" style="display:none;">		Relevé de jambes</ion-checkbox>
-	<ion-checkbox class="Abdominaux" style="display:none;">		Crunch rotation</ion-checkbox>
-	<ion-checkbox class="Abdominaux" style="display:none;">		Flexions latérales</ion-checkbox>
-	<ion-checkbox class="Abdominaux" style="display:none;">		Gainage planche</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Crunch');" class="Abdominaux" style="display:none;">		Crunch</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Relevé de jambes');" class="Abdominaux" style="display:none;">		Relevé de jambes</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Crunch rotation');" class="Abdominaux" style="display:none;">		Crunch rotation</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Flexions latérales');" class="Abdominaux" style="display:none;">		Flexions latérales</ion-checkbox>
+	<ion-checkbox ng-click="add_exos('Gainage planche');" class="Abdominaux" style="display:none;">		Gainage planche</ion-checkbox>
 	<!--- -FULL BODY-->
 	</ion-list>
 	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="createSeance3({exos: exos})" style="display:none;">Suite</button>

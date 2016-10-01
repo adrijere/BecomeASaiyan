@@ -45,5 +45,22 @@
     font-size: 400%;
     margin-top: 20px;
     margin-bottom: 20px;
+}
 
+.titles {
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 15.4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.titles2 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
