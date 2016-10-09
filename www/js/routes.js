@@ -136,5 +136,29 @@ angular.module('app.routes', [])
     controller: 'createSeance3Ctrl'
   })
 
+   .state('createSeance4', {
+    url: '/createSeance4',
+    cache: false,
+      params: {
+      exos: { array:true },
+  },
+    templateUrl: 'templates/createSeance4.html',
+    controller: 'createSeance4Ctrl'
+  })
+
+   .state('seancePerso', {
+    url: '/seancePerso',
+    cache: false,
+      params: {
+      exos: { array:true },
+	  seriemin: Number,
+	  seriesec: Number,
+	  exmin: Number,
+	  exsec: Number,
+  },
+    templateUrl: 'templates/seancePerso.html',
+    controller: 'seancePersoCtrl'
+  })
+
   $urlRouterProvider.otherwise('/page1/settings')
 });

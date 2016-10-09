@@ -1,9 +1,15 @@
-<ion-view style="background-color: rgb(247, 151, 94);" id="createSeance" title="Nouvelle Séance">
+<ion-view style="background-color: rgb(247, 151, 94);" id="createSeance3" title="Nouvelle Séance">
 	<ion-content class="has-header" padding="true">
 	<div ng-controller="createSeance3Ctrl">
-	   <p>  Choisissez vos temps de repos moyen : </p>
-		
-	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="createSeance3({})">Finaliser la séance</button>
+	  <p>Définisez l'ordre des exercices de votre séance :</p>
+	  <ion-list show-reorder="true">
+	    <ion-item ng-repeat="ex in exos">
+	      {{ ex }}
+	      <ion-reorder-button class="ion-navicon" on-reorder="moveItem(ex, $fromIndex, $toIndex)"></ion-reorder-button>
+	    </ion-item>
+	  </ion-list>
+
+	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="createSeance4({exos : exos})">Suite</button>
 	</div>
 	</ion-content>
 </ion-view>

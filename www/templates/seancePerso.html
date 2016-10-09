@@ -1,0 +1,13 @@
+<ion-view style="background-color: rgb(255, 95, 0);" id="seancePerso" title="Séance en cours">
+<ion-content class="has-header" padding="true">
+<div ng-controller="seancePersoCtrl">
+	<h2>Séance personnalisée -- {{ ex[i][j].exercice }}</h2>
+	<p>{{ ex[i][j].repetition }} séries à {{ ex[i][j].poids }} kg</p>
+	<p>Séries :</p>
+	<div ng-repeat="serie in ex[i][j].serie track by $index" class="serie">
+	  <p>{{ serie }} -- <button ng-click="editRep($index, i, j)" class="button-edit">Répétitions</button>  <button ng-click="editPoids($index, i, j)" class="button-edit">Poids</button></p>
+	</div>
+	<button ng-click="upCpt()">Exercice suivant</button>
+</div>
+</ion-content>
+</ion-view>    

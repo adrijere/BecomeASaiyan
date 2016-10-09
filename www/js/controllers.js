@@ -300,28 +300,116 @@ $scope.modifyValue = function(id) {
 })
 
     .controller('createSeance2Ctrl', function($scope, $state, $stateParams) {
-		$scope.exercices = $stateParams.exercices;
-		$scope.exos = [];
-		console.log("Exos: " + $scope.exercices);
-		for (var i = 0; i < $scope.exercices.length; i++) {
-		    console.log($scope.exercices[i]);
-		    var tmp = document.getElementsByClassName($scope.exercices[i]);
-		    for (j = 0; j < tmp.length; j++) {
-				tmp[j].style.display = "block";
-		    }
-		}
-		
-		$scope.add_exos = function(name) {
-			if ($scope.exos.indexOf(name) == -1){
-				$scope.exos.push(name);
-			}
-		    else{
-				$scope.exos.splice($scope.exos.indexOf(name), 1);
-			}
-		};
+	$scope.exercices = $stateParams.exercices;
+	$scope.exos = [];
+	console.log("Exos: " + $scope.exercices);
+	for (var i = 0; i < $scope.exercices.length; i++) {
+	    console.log($scope.exercices[i]);
+	    var tmp = document.getElementsByClassName($scope.exercices[i]);
+	    for (j = 0; j < tmp.length; j++) {
+		tmp[j].style.display = "block";
+	    }
+	}
+	
+	$scope.add_exos = function(name) {
+	    if ($scope.exos.indexOf(name) == -1){
+		$scope.exos.push(name);
+	    }
+	    else{
+		$scope.exos.splice($scope.exos.indexOf(name), 1);
+	    }
+	};
     })
 
     .controller('createSeance3Ctrl', function($scope, $state, $stateParams) {
-		$scope.exos = $stateParams.exos;
-		console.log("Exos : " + $scope.exos);
+	$scope.exos = $stateParams.exos;
+		
+	$scope.moveItem = function(item, fromIndex, toIndex) {
+	    $scope.exos.splice(fromIndex, 1);
+	    $scope.exos.splice(toIndex, 0, item);
+	};
+    })
+		
+    .controller('createSeance4Ctrl', function($scope, $state, $stateParams) {
+	$scope.exos = $stateParams.exos;
+	console.log("Exos : " + $scope.exos);
+	$scope.seriemin = 1;
+	$scope.exmin = 3;
+	$scope.seriesec = 30;
+	$scope.exsec = 0;
+	
+	$scope.timerserie = function() {
+	    var _min = prompt("Minute(s) :");
+	    if (!isNaN(_min) && _min >= 0)
+		$scope.seriemin = _min;
+	    else
+		alert("Veuillez rentrer un nombre de minutes.");
+	    var _sec = prompt("Seconde(s) :");
+	    if (!isNaN(_sec) && _sec >= 0)
+		$scope.seriesec = _sec;
+	    else
+		alert("Veuillez rentrer un nombre de secondes.");	
+	}
+	
+	$scope.timerex = function() {
+	    var _min = prompt("Minute(s) :");
+	    if (!isNaN(_min) && _min >= 0)
+		$scope.exmin = _min;
+	    else
+		alert("Veuillez rentrer un nombre de minutes.");
+	    var _sec = prompt("Seconde(s) :");
+	    if (!isNaN(_sec) && _sec >= 0)
+		$scope.exsec = _sec;
+	    else
+		alert("Veuillez rentrer un nombre de secondes.");	
+	}
+    })
+
+    .controller('seancePersoCtrl', function($scope, $state, $stateParams) {
+	$scope.exos = $stateParams.exos;
+	$scope.seriemin = $stateParams.seriemin;
+	$scope.seriesec = $stateParams.seriesec;
+	$scope.exmin = $stateParams.exmin;
+	$scope.exsec = $stateParams.exsec;
+
+	$scope.i = 0;
+	$scope.j = 0;
+	$scope.ex = [];
+	$scope.ex[0] = [];
+	for (var j = 0; j < $stateParams.exos.length; j++) {
+	    $scope.ex[0].push({"repetition" : 0, "exercice" : "", "poids": 0, "serie" : ["10@20kg","10@20kg","10@20kg","10@20kg"]});
+	    $scope.ex[0][j].exercice = $stateParams.exos[j];
+	    $scope.ex[0][j].repetition = 4;
+	    $scope.ex[0][j].poids = 20;
+	}
+
+    $scope.upCpt = function() {
+		console.log("I : " + $scope.i);
+		console.log("J : " + $scope.j);
+		if ($scope.ex[$scope.i][$scope.j + 1] == undefined && $scope.ex[$scope.i + 1] == undefined)
+			$state.go('resume', { _nameseance: "personnalisée", ex: $scope.ex}); /* Envoyer vers le resumé de la séance */
+		else if ($scope.j < $scope.ex[$scope.i].length - 1)
+			$scope.j = $scope.j + 1;
+		else {
+			$scope.i = $scope.i + 1;
+			$scope.j = 0;
+		}
+	};
+
+    $scope.editRep = function(index, i, j) {
+	var _rep = prompt("Nombre de répétitions :");
+	var tmp = $scope.ex[i][j].serie[index].split("@");
+	if (!isNaN(_rep))
+	    $scope.ex[i][j].serie[index] = _rep + '@' + tmp[1];
+	else
+	    alert("Veuillez rentrer un nombre.");
+    };
+    $scope.editPoids = function(index, i, j) {
+	var _poids = prompt("Poids :");
+	var tmp = $scope.ex[i][j].serie[index].split("@");
+	if(!isNaN(_poids))
+	    $scope.ex[i][j].serie[index] = tmp[0] + '@' + _poids + "kg";
+	else
+	    alert("Veuillez rentrer un nombre.");
+    };
     })

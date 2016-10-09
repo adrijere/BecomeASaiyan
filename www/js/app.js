@@ -376,12 +376,12 @@ if (window.StatusBar) {
 
    historique = [{
     "date": "01/01/1970",
-    "_name": "Vincent",
+    "_name": "Sangoku",
     "muscle": []
   }];
 
   profile = {
-    "prenom": "Vincent",
+    "prenom": "Sangoku",
     "poids" : 80,
     "taille": "1m80",
     "but": "Prise de masse",

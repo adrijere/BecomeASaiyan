@@ -1,0 +1,16 @@
+<ion-view style="background-color: rgb(247, 151, 94);" id="createSeance4" title="Nouvelle Séance">
+	<ion-content class="has-header" padding="true">
+	<div ng-controller="createSeance4Ctrl">
+	   <p>Temps de repos entre chaque série:</p><h2 class="timer">{{seriemin}} : {{seriesec}}</h2>
+<div class="button-bar">
+<button ng-click="timerserie()" id="timerserie" class="button button-energized button-full">Modifier</button>
+</div>
+	   <p>Temps de repos entre chaque exercices:</p><h2 class="timer">{{exmin}} : {{exsec}}</h2>
+<div class="button-bar">
+<button ng-click="timerex()" id="timerex" class="button button-energized button-full">Modifier</button>
+</div>
+
+	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="seancePerso({exos : exos, seriemin : seriemin, seriesec: seriesec, exmin : exmin, exsec: exsec})">Finaliser la séance</button>
+	</div>
+	</ion-content>
+</ion-view>
