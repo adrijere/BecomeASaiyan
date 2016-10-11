@@ -1,12 +1,11 @@
 <ion-view style="background-color: rgb(255, 95, 0);" id="seancePerso" title="Séance en cours">
 <ion-content class="has-header" padding="true">
 <div ng-controller="seancePersoCtrl">
-	<h2>Séance personnalisée -- {{ ex[i][j].exercice }}</h2>
-	<p>{{ ex[i][j].repetition }} séries à {{ ex[i][j].poids }} kg</p>
-	<p>Séries :</p>
+	<h2 style="text-align:center;">Séance personnalisée {{ ex[i][j].exercice }}</h2>
+	<h4><p>{{ ex[i][j].repetition }} séries </p>
 	<div ng-repeat="serie in ex[i][j].serie track by $index" class="serie">
-	  <p>{{ serie }} -- <button ng-click="editRep($index, i, j)" class="button">Reps</button>  <button ng-click="editPoids($index, i, j)" class="button">Poids</button>  <button ng-click="deleteSerie($index, i, j)" class="button icon ion-close-circled"> Supprimer</button></p>
-	</div>
+	  <p>{{ serie }} <button ng-click="editRep($index, i, j)" class="button">Reps</button>  <button ng-click="editPoids($index, i, j)" class="button">Poids</button>  <button ng-click="deleteSerie($index, i, j)" class="button icon ion-close-circled"> Supprimer</button></p>
+	</div></h4>
 	<button ng-click="addSerie(i, j)" class="button icon ion-plus-round"> Ajouter une série</button>
 	<button ng-click="chronoSerie()" class="button">Chrono repos</button>
 	<button ng-click="upCpt()" class="button button-full">Exercice suivant</button>
