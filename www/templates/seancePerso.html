@@ -5,9 +5,11 @@
 	<p>{{ ex[i][j].repetition }} séries à {{ ex[i][j].poids }} kg</p>
 	<p>Séries :</p>
 	<div ng-repeat="serie in ex[i][j].serie track by $index" class="serie">
-	  <p>{{ serie }} -- <button ng-click="editRep($index, i, j)" class="button-edit">Répétitions</button>  <button ng-click="editPoids($index, i, j)" class="button-edit">Poids</button></p>
+	  <p>{{ serie }} -- <button ng-click="editRep($index, i, j)" class="button">Reps</button>  <button ng-click="editPoids($index, i, j)" class="button">Poids</button>  <button ng-click="deleteSerie($index, i, j)" class="button icon ion-close-circled"> Supprimer</button></p>
 	</div>
-	<button ng-click="upCpt()">Exercice suivant</button>
+	<button ng-click="addSerie(i, j)" class="button icon ion-plus-round"> Ajouter une série</button>
+	<button ng-click="chronoSerie()" class="button">Chrono repos</button>
+	<button ng-click="upCpt()" class="button button-full">Exercice suivant</button>
 </div>
 </ion-content>
 </ion-view>    

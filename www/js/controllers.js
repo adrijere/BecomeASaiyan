@@ -365,7 +365,7 @@ $scope.modifyValue = function(id) {
 	}
     })
 
-    .controller('seancePersoCtrl', function($scope, $state, $stateParams) {
+    .controller('seancePersoCtrl', function($scope, $state, $stateParams, $timeout, $ionicPopup) {
 	$scope.exos = $stateParams.exos;
 	$scope.seriemin = $stateParams.seriemin;
 	$scope.seriesec = $stateParams.seriesec;
@@ -384,21 +384,66 @@ $scope.modifyValue = function(id) {
 	}
 
     $scope.upCpt = function() {
-		console.log("I : " + $scope.i);
-		console.log("J : " + $scope.j);
 		if ($scope.ex[$scope.i][$scope.j + 1] == undefined && $scope.ex[$scope.i + 1] == undefined)
 			$state.go('resume', { _nameseance: "personnalisée", ex: $scope.ex}); /* Envoyer vers le resumé de la séance */
-		else if ($scope.j < $scope.ex[$scope.i].length - 1)
-			$scope.j = $scope.j + 1;
+	else if ($scope.j < $scope.ex[$scope.i].length - 1) {
+	    $scope.timermin = $scope.exmin;
+	    $scope.timersec = $scope.exsec;
+	    var timer;
+	    var myPopup = $ionicPopup.show({
+		template: '{{timermin}}:{{timersec}}',
+		title: 'Temps de repos avant le prochain exercice',
+		scope: $scope,
+		buttons: [
+		    { text: 'Fermer',
+		      onTap: function(e) {
+			  $timeout.cancel(timer);
+		      }
+ },
+		    { text: '<b>Lancer</b>',
+		    type: 'button-positive lancer',
+		      onTap: function(e) {
+			  e.preventDefault();
+			  document.getElementsByClassName("lancer")[0].disabled = true;
+			  timer = $timeout($scope.onTimeout,1000);
+		      }
+		    }
+		]
+	    });	
+	$scope.j = $scope.j + 1;
+	}
 		else {
-			$scope.i = $scope.i + 1;
-			$scope.j = 0;
+	    $scope.timermin = $scope.exmin;
+	    $scope.timersec = $scope.exsec;
+	    var timer;
+	    var myPopup = $ionicPopup.show({
+		template: '{{timermin}}:{{timersec}}',
+		title: 'Temps de repos avant le prochain exercice',
+		scope: $scope,
+		buttons: [
+		    { text: 'Fermer',
+		      onTap: function(e) {
+			  $timeout.cancel(timer);
+		      }
+		    },
+		    { text: '<b>Lancer</b>',
+		      type: 'button-positive lancer',
+		      onTap: function(e) {
+			  e.preventDefault();
+			  document.getElementsByClassName("lancer")[0].disabled = true;
+			  timer = $timeout($scope.onTimeout,1000);
+		      }
+		    }
+		]
+	    });	
+		    $scope.i = $scope.i + 1;
+		    $scope.j = 0;
 		}
-	};
-
-    $scope.editRep = function(index, i, j) {
-	var _rep = prompt("Nombre de répétitions :");
-	var tmp = $scope.ex[i][j].serie[index].split("@");
+    };
+	
+	$scope.editRep = function(index, i, j) {
+	    var _rep = prompt("Nombre de répétitions :");
+	    var tmp = $scope.ex[i][j].serie[index].split("@");
 	if (!isNaN(_rep))
 	    $scope.ex[i][j].serie[index] = _rep + '@' + tmp[1];
 	else
@@ -412,4 +457,56 @@ $scope.modifyValue = function(id) {
 	else
 	    alert("Veuillez rentrer un nombre.");
     };
+
+	$scope.deleteSerie = function(index, i, j) {
+	    $scope.ex[i][j].serie.splice(index, 1);
+	    $scope.ex[i][j].repetition -= 1;
+	}
+
+	$scope.addSerie = function(i, j) {
+	    $scope.ex[i][j].serie.push("10@20kg");
+	    $scope.ex[i][j].repetition += 1;
+	}
+
+ $scope.onTimeout = function(){
+        if($scope.timersec == 00)
+	{
+	    $scope.timermin--;
+	    if ($scope.timermin == -1){
+		$scope.timermin = 0;
+		return (1);
+	    }
+	    $scope.timersec = 60;
+	}
+	$scope.timersec--;
+     timer = $timeout($scope.onTimeout,1000);
+    }
+   
+
+	$scope.chronoSerie = function() {
+	    $scope.timermin = $scope.seriemin;
+	    $scope.timersec = $scope.seriesec;
+	    console.log("timermin : " + $scope.timermin);
+	    var timer;
+	    var myPopup = $ionicPopup.show({
+		template: '{{timermin}}:{{timersec}}',
+		title: 'Temps de repos avant la prochaine série',
+		scope: $scope,
+		buttons: [
+		    { text: 'Fermer', 
+		      onTap: function(e) {
+			  $timeout.cancel(timer);
+		      } 
+		    },
+		    { text: '<b>Lancer</b>',
+		      type: 'button-positive lancer',
+		      onTap: function(e) {
+			  e.preventDefault();
+			  document.getElementsByClassName("lancer")[0].disabled = true;
+			  timer = $timeout($scope.onTimeout,1000);
+		      }
+		    }
+		]
+	    });
+	}
     })
