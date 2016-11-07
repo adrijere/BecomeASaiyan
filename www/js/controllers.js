@@ -190,8 +190,7 @@ $scope.modifyValue = function(id) {
 	};
 })
 
-
-.controller('seanceCtrl', function($scope, $state, $stateParams) {
+    .controller('seanceCtrl', function($scope, $state, $stateParams, $ionicPlatform) {
 	$scope.i = 0;
 	$scope.j = 0;
 	$scope.ex = [];
@@ -245,6 +244,12 @@ $scope.modifyValue = function(id) {
 	else
 	    alert("Veuillez rentrer un nombre.");
     };
+
+// Handle the back button when you are in a training session
+	$ionicPlatform.registerBackButtonAction(function (event) {
+	    event.preventDefault();
+	    $ionicHistory.goBack();
+	}, 100);
 })
 
 .controller('resumeCtrl', function($scope, $state, $stateParams) {
@@ -304,10 +309,61 @@ $scope.modifyValue = function(id) {
 	$scope.exos = [];
 	console.log("Exos: " + $scope.exercices);
 	for (var i = 0; i < $scope.exercices.length; i++) {
-	    console.log($scope.exercices[i]);
-	    var tmp = document.getElementsByClassName($scope.exercices[i]);
-	    for (j = 0; j < tmp.length; j++) {
-		tmp[j].style.display = "block";
+	    if ($scope.exercices[i] == "Fullbody") {
+		var tmp = document.getElementsByClassName("Pectoraux");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Grandsdorsaux");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Rhomboides");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Trapezes");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Biceps");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Triceps");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Avantbras");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Deltoides");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Quadriceps");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Ischios");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Mollets");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+		var tmp = document.getElementsByClassName("Abdominaux");
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
+	    }
+	    else {
+		var tmp = document.getElementsByClassName($scope.exercices[i]);
+		for (j = 0; j < tmp.length; j++) {
+		    tmp[j].style.display = "block";
+		}
 	    }
 	}
 	
@@ -365,7 +421,7 @@ $scope.modifyValue = function(id) {
 	}
     })
 
-    .controller('seancePersoCtrl', function($scope, $state, $stateParams, $timeout, $ionicPopup) {
+    .controller('seancePersoCtrl', function($scope, $state, $stateParams, $timeout, $ionicPopup, $ionicPlatform) {
 	$scope.exos = $stateParams.exos;
 	$scope.seriemin = $stateParams.seriemin;
 	$scope.seriesec = $stateParams.seriesec;
@@ -509,4 +565,10 @@ $scope.modifyValue = function(id) {
 		]
 	    });
 	}
+// Handle the back button when you are in a training session
+	$ionicPlatform.registerBackButtonAction(function (event) {
+	    event.preventDefault();
+	    $ionicHistory.goBack();
+	}, 100);
+
     })
