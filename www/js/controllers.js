@@ -584,26 +584,29 @@ $scope.modifyValue = function(id) {
 	    console.log("timermin : " + $scope.timermin);
 	    var timer;
 	    var myPopup = $ionicPopup.show({
-		template: '{{timermin}}:{{timersec}}',
-		title: 'Temps de repos avant la prochaine série',
-		scope: $scope,
-		buttons: [
-		    { text: 'Fermer', 
-		      onTap: function(e) {
-			  $timeout.cancel(timer);
-		      } 
-		    },
-		    { text: '<b>Lancer</b>',
-		      type: 'button-positive lancer',
-		      onTap: function(e) {
-			  e.preventDefault();
-			  document.getElementsByClassName("lancer")[0].disabled = true;
-			  timer = $timeout($scope.onTimeout,1000);
-		      }
-		    }
-		]
+			template: '{{timermin}}:{{timersec}}',
+			title: 'Temps de repos avant la prochaine série',
+			scope: $scope,
+			buttons: [
+			    { text: 'Fermer', 
+			      onTap: function(e) {
+				  $timeout.cancel(timer);
+			      } 
+			    },
+			    { text: '<b>Lancer</b>',
+			      type: 'button-positive lancer',
+			      onTap: function(e) {
+				  e.preventDefault();
+				  document.getElementsByClassName("lancer")[0].disabled = true;
+				  timer = $timeout($scope.onTimeout,1000);
+			      }
+			    }
+			]
 	    });
 	}
+
+	.controller('exoperso', function($scope) {})
+
 // Handle the back button when you are in a training session
 	$ionicPlatform.registerBackButtonAction(function (event) {
 	    event.preventDefault();

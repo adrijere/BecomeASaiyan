@@ -166,5 +166,11 @@ angular.module('app.routes', [])
     controller: 'seancePersoCtrl'
   })
 
+    .state('exoperso', {
+    url: '/mesexos',
+    templateUrl: 'templates/exoperso.html',
+    controller: 'exoperso'
+  })
+
   $urlRouterProvider.otherwise('/page1/settings')
 });
