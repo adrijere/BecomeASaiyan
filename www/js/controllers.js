@@ -1,5 +1,36 @@
 angular.module('app.controllers', [])
 
+.controller('mesExercicesCtrl', function($scope) {
+    $scope.exos = JSON.parse(localStorage.getItem("mesExercices"));
+
+    $scope.add = function() {
+	var new_ex = { "name": "", "description" : "", "image" : "img/avatar.jpg" };
+	new_ex.name = prompt("Nom de l'exercice ?");
+	if (new_ex.name.length == 0){
+	    alert("Nom invalide.");
+	    return ;
+	}
+	$scope.exos.push(new_ex);
+	localStorage.setItem("mesExercices", JSON.stringify($scope.exos));
+    }
+
+    $scope.deleteEx = function(id) {
+	$scope.exos.splice(id, 1);
+	localStorage.setItem("mesExercices", JSON.stringify($scope.exos));
+    }
+
+    $scope.edit = function(id) {
+	new_ex = $scope.exos[id];
+	new_name = prompt("Nom de l'exercice ?");
+	if (new_name.length == 0){
+	    alert("Nom invalide.");
+	    return ;
+	}
+	new_ex.name = new_name;
+	localStorage.setItem("mesExercices", JSON.stringify($scope.exos));
+    }
+})
+
 .controller('entrainementCtrl', function($scope) {
 
 })
@@ -283,7 +314,7 @@ $scope.modifyValue = function(id) {
 })
 
 .controller('createSeanceCtrl', function($scope) {
-    $scope.exercices = [];
+    $scope.exercices = ["mesExercices"];
 
     $scope.add_exos = function(name) {
 		if ($scope.exercices.indexOf(name) == -1){
@@ -305,6 +336,7 @@ $scope.modifyValue = function(id) {
 })
 
     .controller('createSeance2Ctrl', function($scope, $state, $stateParams) {
+	$scope.mesexos = JSON.parse(localStorage.getItem("mesExercices"));
 	$scope.exercices = $stateParams.exercices;
 	$scope.exos = [];
 	console.log("Exos: " + $scope.exercices);
@@ -374,6 +406,13 @@ $scope.modifyValue = function(id) {
 	    else{
 		$scope.exos.splice($scope.exos.indexOf(name), 1);
 	    }
+	};
+
+	$scope.goTimer = function(exos) {
+	    if (exos == null || exos.length == 0)
+		alert("Vous devez choisir au moins un exercice.");
+	    else
+		$state.go('createSeance3', {exos: exos});
 	};
     })
 

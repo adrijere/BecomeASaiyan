@@ -284,7 +284,15 @@ if (window.StatusBar) {
     "nbrepas": 5
   };
 
+	    mesExercices = [{
+		"name": "Ajouter vos propres exercices",
+		"description" : "Ajouter vos propres exercices pour personnaliser vos séances",
+		"image" : "img/avatar.jpg"
+	    }];
+
   if(typeof(Storage) != "undefined") {
+    if(localStorage.getItem("mesExercices") == undefined)
+	localStorage.setItem("mesExercices", JSON.stringify(mesExercices));
     if(localStorage.getItem("profile") == undefined)
       localStorage.setItem("profile", JSON.stringify(profile));
     if (localStorage.getItem("biceps") == undefined)

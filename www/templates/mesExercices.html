@@ -1,0 +1,20 @@
+<ion-view style="background-color: rgb(255, 95, 0);" id="page2" title="Mes exercices">
+  <ion-content class="has-header" padding="true">
+    
+    <div ng-controller="mesExercicesCtrl">
+      <h2 style="text-align: center;">Mes exercices</h2>
+      <ion-list>
+	<ion-item ng-repeat="ex in exos track by $index">
+<div class="row">
+	  {{ex.name }} 
+<div class="col text-right"> <button ng-click="edit($index)" id="edit" class="button button-energized icon ion-edit"></button>  <button ng-click="deleteEx($index)" id="deleteEx" class="button button-energized icon ion-close"></button></div></div>
+	</ion-item>
+      </ion-list>
+
+      <div class="button-bar">
+	<button ng-click="add()" id="add" class="button button-full button-energized icon ion-plus"></button>
+      </div>
+      
+    </div>
+  </ion-content>
+</ion-view>

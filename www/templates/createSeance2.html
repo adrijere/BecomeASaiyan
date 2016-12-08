@@ -76,8 +76,11 @@
 	<ion-checkbox ng-click="add_exos('Flexions latérales');" class="Abdominaux" style="display:none;">		Flexions latérales</ion-checkbox>
 	<ion-checkbox ng-click="add_exos('Gainage planche');" class="Abdominaux" style="display:none;">		Gainage planche</ion-checkbox>
 	<!--- -FULL BODY-->
+	<ion-checkbox ng-repeat="tmp in mesexos" ng-click="add_exos(tmp.name);" class="mesExercices">{{tmp.name }}</ion-checkbox>
 	</ion-list>
-	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ui-sref="createSeance3({exos: exos})" style="display:none;">Suite</button>
+
+
+	    <button class="button button-energized  button-block" style="color:#000000;" id="valider-button1" ng-click="goTimer(exos);" style="display:none;">Suite</button>
 	</div>
 	</ion-content>
 </ion-view>
