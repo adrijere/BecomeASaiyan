@@ -605,7 +605,6 @@ $scope.modifyValue = function(id) {
 	    });
 	}
 
-	.controller('exoperso', function($scope) {})
 
 // Handle the back button when you are in a training session
 	$ionicPlatform.registerBackButtonAction(function (event) {
